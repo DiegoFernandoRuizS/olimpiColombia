@@ -1,0 +1,6 @@
+.idea/
+workspace.xml
+*.pyc
+*.iml
+postgres_heroku
+.env

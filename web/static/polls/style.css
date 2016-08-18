@@ -1,0 +1,221 @@
+body {
+    font-family: "Rio2016";
+    overflow-y: hidden;
+}
+
+@font-face {
+    font-family: "Rio2016";
+    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/Rio2016-Light.eot");
+    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/Rio2016-Light.eot?#iefix") format("embedded-opentype"),
+    url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/Rio2016-Light.woff2") format("woff2"),
+    url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/Rio2016-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "TheSansRio2016";
+    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/fonts/TheSansRio2016-Italic.eot");
+    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts//TheSansRio2016-Italic.eot?#iefix") format("embedded-opentype"),
+    url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/TheSansRio2016-Italic.woff2") format("woff2"),
+    url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/TheSansRio2016-Italic.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sport-list {
+    font-family: "TheSansRio2016";
+    width: 100%;
+    height: 100%;
+    margin: 51px 0 10px 0;
+    overflow-y: scroll;
+    padding: 20px 0 50px 0;
+}
+
+.sport {
+    text-align: center;
+    animation: fadeInUp 1.3s;
+}
+
+.sport i {
+    font-size: 156px;
+    padding: 67px 0;
+}
+
+/*scrollbar*/
+.sport-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(199, 199, 199, 0.1);
+    background-color: #F5F5F5;
+}
+
+.sport-list::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+.sport-list::-webkit-scrollbar-thumb {
+    background-color: #cdcdcd;
+    border: 1px solid #b3b3b3;
+}
+
+.sprite-sports {
+    background-image: url('https://smsprio2016-a.akamaihd.net/data/content/3.00/images/sprites/sprite-actions.png');
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-position: -344px -407px;
+}
+
+.sprite-sports.atletismo {
+    background-position: -406px -496px;
+}
+
+.sprite-sports.boxeo {
+    background-position: -258px -147px;
+}
+
+.sprite-sports.ciclismo-bmx {
+    background-position: -51px -293px;
+}
+
+.sprite-sports.ciclismo-montana {
+    background-position: -406px -404px;
+}
+
+.sprite-sports.ciclismo-pista {
+    background-position: 530px -351px;
+}
+
+.sprite-sports.ciclismo-ruta {
+    background-position: -51px -293px;
+}
+
+.sprite-sports.clavados {
+    background-position: -406px -404px;
+}
+
+.sprite-sports.ecuestre {
+    background-position: -406px -404px;
+}
+
+.sprite-sports.esgrima {
+    background-position: -406px -404px;
+}
+
+.sprite-sports.futbol {
+    background-position: -350px -398px;
+}
+
+.sprite-sports.natacion {
+    background-position: -398px -445px;
+}
+
+.sprite-sports.vela {
+    background-position: -199px -499px;
+}
+
+.sprite-sports.tiro-arco {
+    background-position: -105px -50px;
+}
+
+.sprite-sports.tiro {
+    background-position: -506px -199px;
+}
+
+.sprite-sports.tenis-mesa {
+    background-position: -360px -50px;
+}
+
+.sprite-sports.tenis {
+    background-position: -402px -402px;
+}
+
+.sprite-sports.rugby-a-siete {
+    background-position: -399px -496px;
+}
+
+.sprite-sports.taekwondo {
+    background-position: -100px -400px;
+}
+
+.sprite-sports.nado-sincronizado {
+    background-position: -458px -250px;
+}
+
+.sprite-sports.nado-levantamiento-pesas {
+    background-position: -149px -201px;
+}
+
+.sprite-sports.gimnasia-artistica {
+    background-position: -47px -447px;
+}
+
+.sprite-sports.golf {
+    background-position: -457px -346px;
+}
+
+.sprite-sports.esgrima {
+    background-position: -199px -398px;
+}
+
+.sprite-sports.ciclismo-montana {
+    background-position: -52px -298px;
+}
+
+.sprite-sports.ciclismo-ruta {
+    background-position: -358px 0px;
+}
+
+.sprite-sports.ciclismo-bmx {
+    background-position: -48px -247px;
+}
+
+.sprite-sports.salto-triple {
+    background-position: -200px -448px;
+}
+
+.sprite-sports.judo {
+    background-position: -56px 0px;
+}
+
+.sprite-sports.ciclismo-pista {
+    background-position: -101px -350px;
+}
+
+.sprite-sports.atletismo {
+    background-position: -157px -101px;
+}
+
+.sprite-sports.natación {
+    background-position: -399px -445px;
+}
+
+.sprite-sports.clavados {
+    background-position: -250px -348px;
+}
+
+.sprite-sports.ecuestre {
+    background-position: -410px -150px;
+}
+
+.sprite-sports.pesas {
+    background-position: -152px -201px;
+}
+
+.sprite-sports.salto_triple {
+    background-position: -157px -101px;
+}
+
+@keyframes fadeInUp {
+    from {
+        -webkit-transform: translate3d(0, 40%, 0);
+        opacity: 0;
+        transform: translate3d(0, 40%, 0);
+    }
+
+    to {
+        -webkit-transform: none;
+        opacity: 1;
+        transform: none;
+    }
+}
