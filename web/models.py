@@ -26,8 +26,8 @@ class Athlete(models.Model):
     # Campo del video
     link_video = models.CharField(max_length=255)
     sport = models.ForeignKey(Sport, null=False)
-
     highlight = models.CharField(max_length=70, null=True)
+    photo = models.CharField(max_length=255,null=True)
 
     def __str__(self):
         return self.first_name + ' ' +  self.last_name
