@@ -49,20 +49,14 @@
     </div> <!-- /.container-fluid -->
 </nav>
 
-
-<div class="sport-list">
-    {% for sport in object_list %}
-        <div class="col-md-4 col-sm-6 col-lg-3 sport">
+<div>
+        <div class="col-md-4 col-sm-6 col-lg-3">
             <div class="well">
-                <a href="{% url 'athlete' %}">
                 <h5 align="center">
-                    <span> {{ sport.name }}  </span>
+                    <span> Deportistas</span>
                 </h5>
-                <span class="sprite-sports {{ sport.icon }}"></span>
-                </a>
             </div>
         </div>
-    {% endfor %}
 </div>
 
 </body>
