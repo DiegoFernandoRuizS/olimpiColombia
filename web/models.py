@@ -26,6 +26,10 @@ class Athlete(models.Model):
     coach_name = models.CharField(max_length=50)
     link_video = models.CharField(max_length=255)
     sport = models.ForeignKey(Sport, null=False)
+    #Campo del video
+    highlight = models.CharField(max_length=70, null=True)
+
+
 
 
     def __str__(self):
