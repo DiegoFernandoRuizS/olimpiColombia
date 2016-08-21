@@ -26,7 +26,7 @@ Esta aplicación permite ver la actividad de la representación colombiana en lo
 Clonar el repositorio usando git y configurar los credenciales
 
 ```
-git clone "https://github.com/itaimal/olimpiColombia.git"
+git clone "https://github.com/Rocket-Team/olimpiColombia.git"
 cd olimpiColombia
 git config user.name "{{your user}}"
 git config user.email "{{your email}}"
