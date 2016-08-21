@@ -7,7 +7,7 @@ Esta aplicación permite ver la actividad de la representación colombiana en lo
 * https://kanbanflow.com/board/4b427c27c3e54ddee7861ad55d483ae8
 
 ### Url repositorio github
-* https://github.com/itaimal/olimpiColombia
+* https://github.com/Rocket-Team/olimpiColombia.git
 
 ### Url Integración continua en codeship
 * https://codeship.com/projects/168050
