@@ -219,3 +219,40 @@ body {
         transform: none;
     }
 }
+
+/*Athlete*/
+.athlete {
+    text-align: center;
+    animation: fadeInUp 1.3s;
+}
+
+.athlete-list {
+    font-family: "TheSansRio2016";
+    width: 100%;
+    height: 100%;
+    margin: 51px 0 10px 0;
+    overflow-y: scroll;
+    padding: 20px 0 50px 0;
+}
+
+/*scrollbar*/
+.athlete-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(199, 199, 199, 0.1);
+    background-color: #F5F5F5;
+}
+
+.athlete-list::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+.athlete-list::-webkit-scrollbar-thumb {
+    background-color: #cdcdcd;
+    border: 1px solid #b3b3b3;
+}
+
+.athlete i {
+    font-size: 156px;
+    padding: 67px 0;
+}
+
