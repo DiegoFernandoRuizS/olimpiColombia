@@ -9,5 +9,5 @@ script: nosetests
 deploy:
   provider: heroku
   api_key:
-    secure: "${HEROKU_API_KEY}"
+    secure: "EtSl7IFBFb/D9TmPkNvSzcTG7YBedThlP68djMwLxAYdyPA8W3+pVLeBuKaEcEQhWKIhG5uv4LaNh4902sZkGOI9doNM39TS5lDVqkH/lcPCTiIK/X6FNtB1LmHPlfEYNRjwfHCeWapTDKrhsu0ckL3JpS9uDAApOWrXfTvxEkw="
     app: ivan-test-1
