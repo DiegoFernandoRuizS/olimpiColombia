@@ -17,7 +17,6 @@
 
     <!--web css-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
-
 </head>
 
 <body>
@@ -42,28 +41,23 @@
 
                 <li><a class="glyphicon plyphicon-log-in" href="#">Registro</a></li>
                 <li><a class="glyphicon plyphicon-log-in" href="#">Login</a></li>
-
-
             </ul>
         </div> <!-- /.navbar-collapse -->
     </div> <!-- /.container-fluid -->
 </nav>
-
-
 <div class="sport-list">
     {% for sport in object_list %}
         <div class="col-md-4 col-sm-6 col-lg-3 sport">
             <div class="well">
-                <a href="{% url 'athlete' %}">
-                <h5 align="center">
-                    <span> {{ sport.name }}  </span>
-                </h5>
-                <span class="sprite-sports {{ sport.icon }}"></span>
+                <a href="{% url 'athletes_by_sport' sport_name=sport.name %}">
+                    <h5 align="center">
+                        <span> {{ sport.name }}  </span>
+                    </h5>
+                    <span class="sprite-sports {{ sport.icon }}"></span>
                 </a>
             </div>
         </div>
     {% endfor %}
 </div>
-
 </body>
 </html>
