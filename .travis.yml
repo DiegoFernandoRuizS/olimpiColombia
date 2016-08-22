@@ -1,13 +1,10 @@
 language: python
 python:
-- '3.5.2'
-# command to install dependencies
-install: "pip install -r requirements.txt"
-# command to run tests
+- 3.5.2
+install: pip install -r requirements.txt
 script: nosetests
-
 deploy:
   provider: heroku
   api_key:
-    secure: "EtSl7IFBFb/D9TmPkNvSzcTG7YBedThlP68djMwLxAYdyPA8W3+pVLeBuKaEcEQhWKIhG5uv4LaNh4902sZkGOI9doNM39TS5lDVqkH/lcPCTiIK/X6FNtB1LmHPlfEYNRjwfHCeWapTDKrhsu0ckL3JpS9uDAApOWrXfTvxEkw="
-    app: ivan-test-1
+    secure: q+x7SEwa6UbIP6dIRYaaVQYFKw4UolIC5xZSr6SYoFifX3gztmS0lXCMka0hth4PKYbIU6ExYQ2USGUDqtC9W+i6XGFtP7JGBvMqx07fhgQr8NrTnFRGKg/mTkWwtfRn31cAocPUR1E340zC2W2YDEXND2lWJTcnNvCN5SGoJkKNB8r8MOA0bv0KCWX6zky/457r6R/KN48tOJjF/p+26C/FDN6e2qLoFcO5bLD2XHNbesUk/woiOHv7dnbP5MNL+wnKLSR18cS/qlf4BwZo+DkJ48LP1e7rveQY8/hW4Tz2Idbwbxus1NFoiMShUZZnak+m9Ih5OH6X8dMp9CQRikdh94+bG0iXqXdgKouZCHSAHR6MI9fEn8ON2Z9DDmtz9rF10GYxFnTPKrcDfw4oXrf70m8p90LJKRjyjb+qchVvfFDaFQt87aGMgK9RRnxrVsslRnLcGlnqW5TNBsX9FTov/f+MGr5hJFssNDV0RtriTBfnv8116Xm71Na93M3yhYbDizrofa4yrf/WwjP0RTSLbQFVwYt17mj+zCn/Y4IsrTYBkpRGlZ5JIRqQKm51sNwrXrgLQRERBENdZmUmags98hSUaIlv4/xuGzYX72k/SL2Liwlr7BaOvdyZFVE44fQqOw4lzco8X6bk+l6ScpevSADwZ9NH/YN4LMqU8oA=
+    app: olimpicolombia
