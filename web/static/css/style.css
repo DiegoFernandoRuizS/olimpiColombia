@@ -1,5 +1,5 @@
 body {
-    font-family: "Rio2016";
+    font-family: "TheSansRio2016";
     overflow-y: hidden;
 }
 
@@ -15,12 +15,20 @@ body {
 
 @font-face {
     font-family: "TheSansRio2016";
-    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/fonts/TheSansRio2016-Italic.eot");
-    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts//TheSansRio2016-Italic.eot?#iefix") format("embedded-opentype"),
-    url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/TheSansRio2016-Italic.woff2") format("woff2"),
-    url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/TheSansRio2016-Italic.woff") format("woff");
-    font-weight: 400;
+    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/TheSansRio2016-Light.eot");
+    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/TheSansRio2016-Light.eot?#iefix") format("embedded-opentype"),
+    url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/TheSansRio2016-Light.woff2") format("woff2"),
+    url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/TheSansRio2016-Light.woff") format("woff");
+    font-weight: 300;
     font-style: normal;
+}
+
+.navbar {
+    font-family: "Rio2016"
+}
+
+.navbar ul li a {
+    font-family: "TheSansRio2016";
 }
 
 .sport-list {

@@ -14,6 +14,7 @@
     <title> Olimpi Colombia</title>
     <!--Font icons-->
     <script src="https://use.fontawesome.com/77c07c8a4b.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
 
 </head>
 
@@ -45,11 +46,8 @@
         </div> <!-- /.navbar-collapse -->
     </div> <!-- /.container-fluid -->
 </nav>
-<br>
-<br>
-<br>
-<br>
-<div class="container">
+
+<div class="container athlete-list">
     {% for athlete in athletes %}
         <div class="row">
             <div class="col-sm-12">
@@ -59,7 +57,7 @@
                         </span>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <h2 style="text-decoration:underline;">{{ athlete.first_name }} {{ athlete.last_name }}</h2>
+                    <h2>{{ athlete.first_name }} {{ athlete.last_name }}</h2>
                     <p><strong>Lugar de nacimiento: </strong>{{ athlete.birth_place }} </p>
                     <p><strong>Fecha de nacimiento: </strong>{{ athlete.birthdate }} </p>
                     <p><strong>Peso: </strong>{{ athlete.weight }} KG </p>
