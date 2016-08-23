@@ -11,4 +11,4 @@ deploy:
   on:
     repo: Rocket-Team/olimpiColombia
   run:
-    - "python manage.py collectstatic"
+    - "python manage.py collectstatic --no-input"
