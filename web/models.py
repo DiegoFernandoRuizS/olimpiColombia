@@ -13,6 +13,7 @@ class Sport(models.Model):
     class Meta:
         ordering = ['name']
 
+
 class Athlete(models.Model):
     identification = models.CharField(max_length=11)
     first_name = models.CharField(max_length=20, null=False)
@@ -27,13 +28,14 @@ class Athlete(models.Model):
     link_video = models.CharField(max_length=255)
     sport = models.ForeignKey(Sport, null=False)
     highlight = models.CharField(max_length=70, null=True)
-    photo = models.CharField(max_length=255,null=True)
+    photo = models.CharField(max_length=255, null=True)
 
     def __str__(self):
-        return self.first_name + ' ' +  self.last_name
+        return self.first_name + ' ' + self.last_name
 
     class Meta:
         ordering = ['last_name']
+
 
 class ScheduleItem(models.Model):
     datetime = models.DateTimeField(null=False)
@@ -46,6 +48,9 @@ class ScheduleItem(models.Model):
 
     def __str__(self):
         return self.state
+
+    class Meta:
+        ordering = ['datetime']
 
 
 class VisitRegistry(models.Model):

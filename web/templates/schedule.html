@@ -14,12 +14,12 @@
     <title> Olimpi Colombia</title>
     <!--Font icons-->
     <script src="https://use.fontawesome.com/77c07c8a4b.js"></script>
-
-    <!--web css-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+
 </head>
 
 <body>
+
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -30,7 +30,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Colombia en RIO 2016</a>
+            <a class="navbar-brand" href="/">Colombia en RIO 2016</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -41,21 +41,25 @@
 
                 <li><a class="glyphicon plyphicon-log-in" href="#">Registro</a></li>
                 <li><a class="glyphicon plyphicon-log-in" href="#">Login</a></li>
-                <li><a class="glyphicon plyphicon-log-in" href="#">Calendario</a></li>
+
+
             </ul>
         </div> <!-- /.navbar-collapse -->
     </div> <!-- /.container-fluid -->
 </nav>
-<div class="sport-list">
-    {% for sport in object_list %}
-        <div class="col-md-4 col-sm-6 col-lg-3 sport">
-            <div class="well">
-                <a href="{% url 'athletes_by_sport' sport_name=sport.name %}">
-                    <h5 align="center">
-                        <span> {{ sport.name }}  </span>
-                    </h5>
-                    <span class="sprite-sports {{ sport.icon }}"></span>
-                </a>
+
+<div class="container athlete-list">
+<br/><br/><br/>
+<p><strong>CALENDARIO DE COMPETICIONES</strong></p>
+<br/>
+    {% for schedule in schedules %}
+        <div class="row">
+            <div class="col-sm-12">
+                <p><strong>Fecha/Hora: </strong>{{schedule.datetime}} </p>
+                <p><strong>Modalidad: </strong>{{ schedule.modality }}</p>
+                <p><strong>Deporte: </strong>{{ schedule.sport }}</p>
+                <p><strong>Atleta: </strong>{{ schedule.athlete }}</p>
+                <p><strong>Estado: </strong>{{ schedule.state }}</p>
             </div>
         </div>
     {% endfor %}
