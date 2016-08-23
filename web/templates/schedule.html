@@ -49,20 +49,28 @@
 </nav>
 
 <div class="container athlete-list">
-<br/><br/><br/>
-<p><strong>CALENDARIO DE COMPETICIONES</strong></p>
-<br/>
-    {% for schedule in schedules %}
+    <br/><br/><br/>
+    <p><strong>CALENDARIO DE COMPETICIONES</strong></p>
+    <br/>
+    {% if schedules %}
+        {% for schedule in schedules %}
+            <div class="row">
+                <div class="col-sm-12 centered-container">
+                    <p><strong>Fecha/Hora: </strong>{{ schedule.datetime }} </p>
+                    <p><strong>Modalidad: </strong>{{ schedule.modality }}</p>
+                    <p><strong>Deporte: </strong>{{ schedule.sport }}</p>
+                    <p><strong>Atleta: </strong>{{ schedule.athlete }}</p>
+                    <p><strong>Estado: </strong>{{ schedule.state }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
         <div class="row">
-            <div class="col-sm-12">
-                <p><strong>Fecha/Hora: </strong>{{schedule.datetime}} </p>
-                <p><strong>Modalidad: </strong>{{ schedule.modality }}</p>
-                <p><strong>Deporte: </strong>{{ schedule.sport }}</p>
-                <p><strong>Atleta: </strong>{{ schedule.athlete }}</p>
-                <p><strong>Estado: </strong>{{ schedule.state }}</p>
+            <div class="col-sm-12 centered-container">
+                <span>Calendario no disponible</span>
             </div>
         </div>
-    {% endfor %}
+    {% endif %}
 </div>
 </body>
 </html>

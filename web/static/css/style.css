@@ -31,6 +31,12 @@ body {
     font-family: "TheSansRio2016";
 }
 
+.centered-container{
+    text-align: center;
+    font-size: 19px;
+    margin: 87px 0 0 0;
+}
+
 .sport-list {
     font-family: "TheSansRio2016";
     width: 100%;
