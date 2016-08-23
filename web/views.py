@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Sport, Athlete
-from django.views.generic.list import ListView
+from .models import Sport, Athlete, ScheduleItem
+from django.views.generic import ListView, TemplateView
 
 class IndexView (ListView):
     model = Sport
@@ -18,3 +18,10 @@ class AthletesBySportList(ListView):
         sport = self.kwargs['sport_name']
         queryset = Athlete.objects.filter(sport__name__icontains = sport)
         return queryset
+
+class ScheduleList(ListView):
+     model = ScheduleItem
+     template_name = 'schedule.html'
+     context_object_name = 'schedules'
+
+
