@@ -11,4 +11,4 @@ deploy:
   on:
     repo: Rocket-Team/olimpiColombia
   run:
-    - "./manage collectstatic"
+    - "python manage collectstatic"
