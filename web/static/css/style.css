@@ -23,6 +23,10 @@ body {
     font-style: normal;
 }
 
+.navbar-brand  {
+    color: #a94442;
+    font-weight: bolder;
+}
 .navbar {
     font-family: "Rio2016"
 }
@@ -31,7 +35,7 @@ body {
     font-family: "TheSansRio2016";
 }
 
-.centered-container{
+.centered-container {
     text-align: center;
     font-size: 19px;
     margin: 87px 0 0 0;
