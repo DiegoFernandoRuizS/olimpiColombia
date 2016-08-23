@@ -25,8 +25,8 @@ class Athlete(models.Model):
     height = models.FloatField()
     coach_name = models.CharField(max_length=50)
     # Campo del video
-    link_video = models.CharField(max_length=255)
-    sport = models.ForeignKey(Sport, null=False)
+    video = models.FileField(null=True, blank=True, upload_to='video')
+    sport = models.ForeignKey(Sport)
     highlight = models.CharField(max_length=70, null=True)
     photo = models.CharField(max_length=255, null=True)
 
