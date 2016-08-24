@@ -16,7 +16,8 @@ class AthletesBySportList(ListView):
 
     def get_queryset(self, **kwargs):
         sport = self.kwargs['sport_name']
-        queryset = Athlete.objects.filter(sport__name__icontains = sport)
+        print(sport)
+        queryset = Athlete.objects.filter(sport__name__exact = sport)
         return queryset
 
 
