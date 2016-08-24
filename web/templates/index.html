@@ -49,14 +49,14 @@
 <div class="sport-list">
     {% for sport in object_list %}
         <div class="col-md-4 col-sm-6 col-lg-3 sport">
-            <div class="well">
-                <a href="{% url 'athletes_by_sport' sport_name=sport.name %}">
+            <a href="{% url 'athletes_by_sport' sport_name=sport.name %}" >
+                <div class="well">
                     <h5 align="center">
                         <span> {{ sport.name }}  </span>
                     </h5>
                     <span class="sprite-sports {{ sport.icon }}"></span>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
     {% endfor %}
 </div>

@@ -30,7 +30,7 @@ body {
     background-color: #fafafa;
 }
 
-.navbar-brand  {
+.navbar-default .navbar-brand {
     color: #a94442;
     font-weight: bolder;
 }
@@ -40,6 +40,10 @@ body {
 
 .navbar ul li a {
     font-family: "TheSansRio2016";
+}
+
+.well:hover{
+       border: 1px solid #a57272;
 }
 
 .centered-container {
