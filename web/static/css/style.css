@@ -23,6 +23,13 @@ body {
     font-style: normal;
 }
 
+.empty-video{
+    width: 40%;
+    margin: 0 30% 0 30%;
+    height: 120px;
+    background-color: #fafafa;
+}
+
 .navbar-brand  {
     color: #a94442;
     font-weight: bolder;

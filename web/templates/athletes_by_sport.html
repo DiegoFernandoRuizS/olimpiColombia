@@ -67,10 +67,14 @@
                     </div>
                     <div class="col-xs-12 col-sm-3 text-center">
                     <span class="col-sm-12" style="padding-top: 20px;">
-                      <video controls width="200" height="200">
-                        <source src="{{ athlete.video.url }}" type="video/mp4">
-                        Tu navegador no implementa el elemento <code>video</code>.
-                      </video>
+                         {% if athlete.video %}
+                             <video controls width="200" height="200">
+                             <source src="{{ athlete.video.url }}" type="video/mp4">
+                             Tu navegador no implementa el elemento <code>video</code>.
+                             </video>
+                         {% else %}
+                             <div class="empty-video"></div>
+                         {% endif %}
                     </span>
                         <p><strong>Compartir</strong></p>
                         <a class="btn btn-social-icon btn-twitter">
