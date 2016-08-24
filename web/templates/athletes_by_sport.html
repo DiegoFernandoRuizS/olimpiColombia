@@ -1,51 +1,6 @@
-{# Load the tag library #}
-{% load bootstrap3 %}
+{% extends 'base.html' %}
 
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-{% load static %}
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> Olimpi Colombia</title>
-    <!--Font icons-->
-    <script src="https://use.fontawesome.com/77c07c8a4b.js"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
-
-</head>
-
-<body>
-
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-bar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Colombia en RIO 2016</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="main-bar">
-            <ul class="nav navbar-nav">
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a class="glyphicon plyphicon-log-in" href="{% url 'index' %}">Inicio</a></li>
-                <li><a class="glyphicon plyphicon-log-in" href="#">Registro</a></li>
-                <li><a class="glyphicon plyphicon-log-in" href="#">Login</a></li>
-            </ul>
-        </div> <!-- /.navbar-collapse -->
-    </div> <!-- /.container-fluid -->
-</nav>
-
+{% block main %}
 <div class="container athlete-list">
     {% if athletes %}
         {% for athlete in athletes %}
@@ -97,5 +52,4 @@
         </div>
     {% endif %}
 </div>
-</body>
-</html>
+{% endblock %}
