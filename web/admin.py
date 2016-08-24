@@ -18,9 +18,9 @@ class AthleteAdmin(admin.ModelAdmin):
 
 @admin.register(ScheduleItem)
 class ScheduleAdmin(admin.ModelAdmin):
-    list_display = ('state', 'result', 'modality', 'sport', )
+    list_display = ('state', 'result', 'modality', 'sport', 'athlete', 'datetime',)
     search_fields = ('state', )
-    list_filter = ('sport', )
+    list_filter = ('sport','result', 'datetime',)
 
 
 @admin.register(VisitRegistry)
