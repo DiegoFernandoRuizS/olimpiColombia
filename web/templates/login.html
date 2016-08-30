@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="container centered-container">
+        <br><br><br><br>
+        <div>
+            <a href="{% url 'social:begin' 'google-oauth2' %}">Entrar con la cuenta de Google</a>
+        </div>
+        <div>
+            <a href="{% url 'social:begin' 'google-oauth2' %}">Entrar con la cuenta de Facebook</a>
+        </div>
+    </div>
+{% endblock %}

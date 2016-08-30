@@ -2,9 +2,14 @@ from django.shortcuts import render
 from .models import Sport, Athlete, ScheduleItem
 from django.views.generic import ListView, TemplateView
 
+
 class IndexView (ListView):
     model = Sport
     template_name = 'index.html'
+
+
+class LoginView(TemplateView):
+    template_name = "login.html"
 
 
 class AthletesBySportList(ListView):
