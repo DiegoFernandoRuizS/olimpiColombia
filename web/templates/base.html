@@ -38,8 +38,9 @@
             <ul class="nav navbar-nav">
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="glyphicon plyphicon-log-in" href="#">Registro</a></li>
-                <li><a class="glyphicon plyphicon-log-in" href="/login">Login</a></li>
+                <li><a class="glyphicon plyphicon-log-in" href="{% url 'login' %}">Ingresar</a></li>
+                <li><a class="glyphicon plyphicon-log-in" href="{% url 'add_user' %}">Registro</a></li>
+                <li><a class="glyphicon plyphicon-log-in" href="{% url 'index' %}">Inicio</a></li>
             </ul>
         </div> <!-- /.navbar-collapse -->
     </div> <!-- /.container-fluid -->
