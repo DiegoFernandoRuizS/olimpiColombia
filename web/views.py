@@ -107,4 +107,4 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect(reverse('web:index'))
+    return HttpResponseRedirect(reverse('index'))
