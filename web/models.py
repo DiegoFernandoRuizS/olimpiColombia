@@ -26,6 +26,7 @@ class Athlete(models.Model):
     # Campo del video
     video = models.FileField(null=True, blank=True, upload_to='video')
     sport = models.ForeignKey(Sport)
+    photo = models.FileField(null=True, blank=True, upload_to='fotos')
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
