@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Sport, Athlete, ScheduleItem
 from django.views.generic import ListView, TemplateView
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class IndexView (ListView):
     model = Sport
@@ -12,11 +12,12 @@ class LoginView(TemplateView):
     template_name = "login.html"
 
 
-class AthletesBySportList(ListView):
+class AthletesBySportList(LoginRequiredMixin, ListView):
     model = Athlete
     template_name = 'athletes_by_sport.html'
     context_object_name = 'athletes'
-
+    login_url = 'login'
+    redirect_field_name = 'redirect_to'
     # paginate_by = 10
 
     def get_queryset(self, **kwargs):
@@ -26,10 +27,12 @@ class AthletesBySportList(ListView):
         return queryset
 
 
-class ScheduleList(ListView):
+class ScheduleList(LoginRequiredMixin, ListView):
     model = ScheduleItem
     template_name = 'schedule.html'
     context_object_name = 'schedules'
+    login_url = 'login'
+    redirect_field_name = 'redirect_to'
 
     # paginate_by = 10
 
