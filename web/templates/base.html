@@ -39,7 +39,11 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a class="glyphicon plyphicon-log-in" href="#">Registro</a></li>
+                {% if user and not user.is_anonymous %}
+                <li><a class="glyphicon plyphicon-log-in" href="#">{{ user.get_full_name }}</a></li>
+              {% else %}
                 <li><a class="glyphicon plyphicon-log-in" href="/login">Login</a></li>
+              {% endif %}
             </ul>
         </div> <!-- /.navbar-collapse -->
     </div> <!-- /.container-fluid -->
