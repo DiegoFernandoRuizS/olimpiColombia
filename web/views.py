@@ -8,6 +8,7 @@ from django.http import HttpResponseRedirect
 from django.views.generic import CreateView
 from .models import Sport, Athlete, ScheduleItem, User
 from django.views.generic import ListView
+from django.contrib.auth.forms import UserCreationForm
 
 
 class IndexView(ListView):
@@ -15,17 +16,24 @@ class IndexView(ListView):
     template_name = 'index.html'
 
 
-class UserForm(ModelForm):
+class UserForm(UserCreationForm):
     username = forms.CharField(max_length=50)
     first_name = forms.CharField(max_length=20)
     last_name = forms.CharField(max_length=20)
     email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput())
-    password2 = forms.CharField(widget=forms.PasswordInput())
+    password1 = forms.CharField(widget=forms.PasswordInput)
+    password2 = forms.CharField(widget=forms.PasswordInput)
 
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'password', 'password2']
+        fields = [
+            'username',
+            'first_name',
+            'last_name',
+            'email',
+            'password1',
+            'password2'
+        ]
 
     def clean_username(self):
         """Comprueba que no exista un username igual en la BD"""
@@ -43,9 +51,9 @@ class UserForm(ModelForm):
 
     def clean_password2(self):
         """Comprueba que password y password2 sean iguales"""
-        password = self.cleaned_data['password']
+        password1 = self.cleaned_data['password1']
         password2 = self.cleaned_data['password2']
-        if password != password2:
+        if password1 != password2:
             raise forms.ValidationError('Las claves no coinciden.')
         return password2
 
@@ -54,8 +62,7 @@ class UserCreate(CreateView):
     model = User
     template_name = 'userRegistry.html'
     form_class = UserForm
-    success_url = reverse_lazy('add_user')
-    # https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
+    success_url = '/login/'
 
 
 class AthletesBySportList(LoginRequiredMixin, ListView):
