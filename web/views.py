@@ -1,11 +1,53 @@
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import forms
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import ModelForm
 from django.shortcuts import render, redirect
-from django.urls import reverse
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.http import HttpResponseRedirect
 from django.views.generic import CreateView
-from .models import Sport, Athlete, ScheduleItem
+from .models import Sport, Athlete, ScheduleItem, User
+from django.views.generic import ListView
+
+
+class IndexView(ListView):
+    model = Sport
+    template_name = 'index.html'
+
+
+class UserForm(ModelForm):
+    username = forms.CharField(max_length=50)
+    first_name = forms.CharField(max_length=20)
+    last_name = forms.CharField(max_length=20)
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput())
+    password2 = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ['username', 'first_name', 'last_name', 'email', 'password', 'password2']
+
+    def clean_username(self):
+        """Comprueba que no exista un username igual en la BD"""
+        username = self.cleaned_data['username']
+        if User.objects.filter(username=username):
+            raise forms.ValidationError('Nombre de usuario ya registrado.')
+        return username
+
+    def clean_email(self):
+        """Comprueba que no exista un email igual en la BD"""
+        email = self.cleaned_data['email']
+        if User.objects.filter(email=email):
+            raise forms.ValidationError('Ya existe un email igual registrado.')
+        return email
+
+    def clean_password2(self):
+        """Comprueba que password y password2 sean iguales"""
+        password = self.cleaned_data['password']
+        password2 = self.cleaned_data['password2']
+        if password != password2:
+            raise forms.ValidationError('Las claves no coinciden.')
+        return password2
 
 
 class UserCreate(CreateView):
@@ -14,11 +56,6 @@ class UserCreate(CreateView):
     form_class = UserForm
     success_url = reverse_lazy('add_user')
     # https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
-
-
-class IndexView (ListView):
-    model = Sport
-    template_name = 'index.html'
 
 
 class AthletesBySportList(LoginRequiredMixin, ListView):
@@ -32,7 +69,7 @@ class AthletesBySportList(LoginRequiredMixin, ListView):
     def get_queryset(self, **kwargs):
         sport = self.kwargs['sport_name']
         print(sport)
-        queryset = Athlete.objects.filter(sport__name__exact = sport)
+        queryset = Athlete.objects.filter(sport__name__exact=sport)
         return queryset
 
 

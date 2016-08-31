@@ -1,5 +1,6 @@
 from django.conf.urls import url, include
-from .views import IndexView, AthletesBySportList, ScheduleList, LoginView
+from . import views
+from .views import IndexView, AthletesBySportList, ScheduleList, UserCreate
 
 urlpatterns = [
     url('', include('social.apps.django_app.urls', namespace='social')),
