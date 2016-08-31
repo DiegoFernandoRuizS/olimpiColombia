@@ -10,10 +10,10 @@ class SportAdmin(admin.ModelAdmin):
 
 @admin.register(Athlete)
 class AthleteAdmin(admin.ModelAdmin):
-    list_display = ('identification', 'first_name', 'last_name', 'weight', 'sport', )
-    search_fields = ('first_name', )
-    list_filter = ('sport', )
-    list_editable = ('first_name', 'sport',)
+    list_display = ('first_name', 'last_name', 'weight', 'sport',)
+    search_fields = ('first_name',)
+    list_filter = ('sport',)
+    list_editable = ('sport',)
 
 
 @admin.register(ScheduleItem)
@@ -28,6 +28,3 @@ class ScheduleAdmin(admin.ModelAdmin):
 class VisitRegistry(admin.ModelAdmin):
     list_display = ('datetime','user_type', )
     search_fields = ('user_type', )
-
-
-

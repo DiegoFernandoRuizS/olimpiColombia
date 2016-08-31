@@ -15,7 +15,6 @@ class Sport(models.Model):
 
 
 class Athlete(models.Model):
-    identification = models.CharField(max_length=11)
     first_name = models.CharField(max_length=20, null=False)
     last_name = models.CharField(max_length=20)
     birth_place = models.CharField(max_length=50, null=False)
@@ -27,8 +26,6 @@ class Athlete(models.Model):
     # Campo del video
     video = models.FileField(null=True, blank=True, upload_to='video')
     sport = models.ForeignKey(Sport)
-    highlight = models.CharField(max_length=70, null=True)
-    photo = models.CharField(max_length=255, null=True)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
