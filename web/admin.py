@@ -18,13 +18,20 @@ class AthleteAdmin(admin.ModelAdmin):
 
 @admin.register(ScheduleItem)
 class ScheduleAdmin(admin.ModelAdmin):
-    list_display = ('state', 'result', 'modality', 'sport', 'athlete', 'datetime',)
+    list_display = (
+        'state',
+        'result',
+        'modality',
+        'sport',
+        'athlete',
+        'datetime',
+    )
     search_fields = ('state', )
-    list_filter = ('sport','result', 'datetime',)
-    list_editable = ('sport','result', 'datetime',)
+    list_filter = ('sport', 'result', 'datetime',)
+    list_editable = ('sport', 'result', 'datetime',)
 
 
 @admin.register(VisitRegistry)
 class VisitRegistry(admin.ModelAdmin):
-    list_display = ('datetime','user_type', )
+    list_display = ('datetime', 'user_type', )
     search_fields = ('user_type', )
