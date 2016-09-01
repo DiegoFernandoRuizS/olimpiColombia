@@ -90,7 +90,7 @@ class ScheduleList(LoginRequiredMixin, ListView):
 
     def get_queryset(self, **kwargs):
         athleteId = self.kwargs['athlete_id']
-        queryset = ScheduleItem.objects.filter(athlete__identification=athleteId)
+        queryset = ScheduleItem.objects.filter(athlete__pk=athleteId)
         return queryset
 
 
