@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'storages',
     'social.apps.django_app.default',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

@@ -9,6 +9,8 @@ from django.views.generic import CreateView
 from .models import Sport, Athlete, ScheduleItem, User
 from django.views.generic import ListView
 from django.contrib.auth.forms import UserCreationForm
+from rest_framework.generics import ListAPIView, RetrieveAPIView
+from .serializers import SportSerializer, AthleteSerializer
 
 
 class IndexView(ListView):
@@ -76,7 +78,7 @@ class AthletesBySportList(LoginRequiredMixin, ListView):
     def get_queryset(self, **kwargs):
         sport = self.kwargs['sport_name']
         print(sport)
-        queryset = Athlete.objects.filter(sport__name__exact=sport)
+        queryset = Athlete.objects.filter(sport__name__iexact=sport)
         return queryset
 
 
@@ -115,3 +117,17 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+
+class SportListView(ListAPIView):
+    serializer_class = SportSerializer
+    queryset = Sport.objects.all()
+
+
+class AthleteBySportListView(ListAPIView):
+    serializer_class = AthleteSerializer
+
+    def get_queryset(self):
+        athletes = Athlete.objects.filter(
+            sport__name__iexact=self.kwargs['sport_name'])
+        return athletes
