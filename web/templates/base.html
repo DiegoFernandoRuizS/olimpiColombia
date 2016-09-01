@@ -39,9 +39,11 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if user and not user.is_anonymous %}
-                    <li><a class="glyphicon plyphicon-log-in" href="#">{{ user.get_full_name }}</a></li>
+                    <li><a class="navbar-brand" href="#">{{ user.get_full_name }}</a></li>
+                    <li><a class="glyphicon plyphicon-log-in" href="{% url 'index' %}">Inicio</a></li>
                     <li><a class="glyphicon plyphicon-log-out" href="{% url 'logout' %}">Salir</a></li>
                 {% else %}
+                    <li><a class="glyphicon plyphicon-log-in" href="{% url 'index' %}">Inicio</a></li>
                     <li><a class="glyphicon plyphicon-log-in" href="{% url 'login' %}">Ingresar</a></li>
                     <li><a class="glyphicon plyphicon-log-in" href="{% url 'add_user' %}">Registro</a></li>
                 {% endif %}
