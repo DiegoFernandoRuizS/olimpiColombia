@@ -88,7 +88,7 @@ body {
 }
 
 .sprite-sports {
-    background-image: url('https://smsprio2016-a.akamaihd.net/data/content/3.00/images/sprites/sprite-actions.png');
+    background-image: url('https://olimpicolombia.s3.amazonaws.com/img/sprite-actions.png');
     display: inline-block;
     width: 50px;
     height: 50px;
