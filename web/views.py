@@ -6,6 +6,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.http import HttpResponseRedirect
 from django.views.generic import CreateView
+from rest_framework.permissions import IsAuthenticated
+
 from .models import Sport, Athlete, ScheduleItem, User
 from django.views.generic import ListView
 from django.contrib.auth.forms import UserCreationForm
@@ -123,9 +125,13 @@ class SportListView(ListAPIView):
     serializer_class = SportSerializer
     queryset = Sport.objects.all()
 
+    permission_classes = (IsAuthenticated,)
+
 
 class AthleteBySportListView(ListAPIView):
     serializer_class = AthleteSerializer
+
+    permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
         athletes = Athlete.objects.filter(
