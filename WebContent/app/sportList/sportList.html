@@ -2,4 +2,8 @@
     <h>{{'general_component' | translate }} : {{ctrl.title}}</h>
     <br/>
     <a ng-click="ctrl.showAlert()">Click here</a>
+
+    <span ng-repeat="sport in ctrl.sportList.sports">
+        {{ sport.name }}
+    </span>
 </a>

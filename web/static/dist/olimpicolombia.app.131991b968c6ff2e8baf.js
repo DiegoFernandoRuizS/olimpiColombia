@@ -62331,7 +62331,7 @@
 /* 54 */
 /***/ function(module, exports) {
 
-	module.exports = "<a target=\"_blank\" href=\"https://docs.angularjs.org/guide/component\">\r\n    <h>{{'general_component' | translate }} : {{ctrl.title}}</h>\r\n    <br/>\r\n    <a ng-click=\"ctrl.showAlert()\">Click here</a>\r\n</a>\r\n";
+	module.exports = "<a target=\"_blank\" href=\"https://docs.angularjs.org/guide/component\">\r\n    <h>{{'general_component' | translate }} : {{ctrl.title}}</h>\r\n    <br/>\r\n    <a ng-click=\"ctrl.showAlert()\">Click here</a>\r\n\r\n    <span ng-repeat=\"sport in ctrl.sportList.sports\">\r\n        {{ sport.name }}\r\n    </span>\r\n</a>\r\n";
 
 /***/ },
 /* 55 */
@@ -62415,7 +62415,7 @@
 
 	var restApiModule = angular.module('restApiModule');
 	restApiModule.factory('SportsApiService', ['$resource', function ($resource) {
-	    return $resource('api/sports/?format=json', {});
+	    return $resource('https://olimpi-colombia.herokuapp.com/api/sports/?format=json', {});
 	}]);
 
 
