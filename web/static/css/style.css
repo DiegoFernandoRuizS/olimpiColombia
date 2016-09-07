@@ -5,20 +5,20 @@ body {
 
 @font-face {
     font-family: "Rio2016";
-    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/Rio2016-Light.eot");
-    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/Rio2016-Light.eot?#iefix") format("embedded-opentype"),
-    url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/Rio2016-Light.woff2") format("woff2"),
-    url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/Rio2016-Light.woff") format("woff");
+    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/Rio2016-Light.eot");
+    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/Rio2016-Light.eot?#iefix") format("embedded-opentype"),
+    url("https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/Rio2016-Light.woff2") format("woff2"),
+    url("https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/Rio2016-Light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: "TheSansRio2016";
-    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/TheSansRio2016-Light.eot");
-    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/TheSansRio2016-Light.eot?#iefix") format("embedded-opentype"),
-    url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/TheSansRio2016-Light.woff2") format("woff2"),
-    url("https://smsprio2016-a.akamaihd.net/data/content/3.00/fonts/TheSansRio2016-Light.woff") format("woff");
+    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/TheSansRio2016-Light.eot");
+    src: url("https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/TheSansRio2016-Light.eot?#iefix") format("embedded-opentype"),
+    url("https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/TheSansRio2016-Light.woff2") format("woff2"),
+    url("https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/TheSansRio2016-Light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
 }
