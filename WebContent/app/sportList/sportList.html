@@ -1,9 +1,12 @@
-<a target="_blank" href="https://docs.angularjs.org/guide/component">
-    <h>{{'general_component' | translate }} : {{ctrl.title}}</h>
-    <br/>
-    <a ng-click="ctrl.showAlert()">Click here</a>
+<div class="sport-list">
+    <div class="col-md-4 col-sm-6 col-lg-3 sport"
+         ng-repeat="sport in ctrl.sportList.sports">
+            <div class="well">
+                <h5 align="center">
+                    <span> {{ sport.name }}  </span>
+                </h5>
+                <span class="sprite-sports {{ sport.icon }}"></span>
+            </div>
+    </div>
+</div>
 
-    <span ng-repeat="sport in ctrl.sportList.sports">
-        {{ sport.name }}
-    </span>
-</a>

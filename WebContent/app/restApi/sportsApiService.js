@@ -1,6 +1,11 @@
 var restApiModule = angular.module('restApiModule');
 restApiModule.factory('SportsApiService', ['$resource', function ($resource) {
-    return $resource('https://olimpi-colombia.herokuapp.com/api/sports/?format=json', {});
+    return $resource('api/sports', {}, {
+        loadSports: {
+            url: 'api/sports/?format=json',
+            method: 'GET',
+            isArray: true,
+            params: {}
+        }
+    });
 }]);
-
-

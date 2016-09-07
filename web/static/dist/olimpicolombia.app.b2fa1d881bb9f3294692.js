@@ -61969,7 +61969,7 @@
 
 
 	// module
-	exports.push([module.id, "/*add here the global styles*/\n", ""]);
+	exports.push([module.id, "/*add here the global styles*/\nbody {\n  font-family: \"TheSansRio2016\";\n}\n@font-face {\n  font-family: \"Rio2016\";\n  src: url(\"https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/Rio2016-Light.eot\");\n  src: url(\"https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/Rio2016-Light.eot?#iefix\") format(\"embedded-opentype\"), url(\"https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/Rio2016-Light.woff2\") format(\"woff2\"), url(\"https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/Rio2016-Light.woff\") format(\"woff\");\n  font-weight: 300;\n  font-style: normal;\n}\n@font-face {\n  font-family: \"TheSansRio2016\";\n  src: url(\"https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/TheSansRio2016-Light.eot\");\n  src: url(\"https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/TheSansRio2016-Light.eot?#iefix\") format(\"embedded-opentype\"), url(\"https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/TheSansRio2016-Light.woff2\") format(\"woff2\"), url(\"https://smsprio2016-a.akamaihd.net/data/content/3.07/fonts/TheSansRio2016-Light.woff\") format(\"woff\");\n  font-weight: 300;\n  font-style: normal;\n}\n.empty-video {\n  width: 40%;\n  margin: 0 30% 0 30%;\n  height: 120px;\n  background-color: #fafafa;\n}\n.navbar-default .navbar-brand {\n  color: #a94442;\n  font-weight: bolder;\n}\n.navbar {\n  font-family: \"Rio2016\";\n}\n.navbar ul li a {\n  font-family: \"TheSansRio2016\";\n}\n.well:hover {\n  border: 1px solid #a57272;\n}\n.centered-container {\n  text-align: center;\n  font-size: 19px;\n  margin: 87px 0 0 0;\n}\n.sport-list {\n  font-family: \"TheSansRio2016\";\n  width: 100%;\n  height: 100%;\n  margin: 51px 0 10px 0;\n  padding: 20px 0 50px 0;\n}\n.sport {\n  text-align: center;\n  -webkit-animation: fadeInUp 1.3s;\n          animation: fadeInUp 1.3s;\n}\n.sport i {\n  font-size: 156px;\n  padding: 67px 0;\n}\n/*scrollbar*/\n.sport-list::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(199, 199, 199, 0.1);\n  background-color: #F5F5F5;\n}\n.sport-list::-webkit-scrollbar {\n  width: 10px;\n  background-color: #F5F5F5;\n}\n.sport-list::-webkit-scrollbar-thumb {\n  background-color: #cdcdcd;\n  border: 1px solid #b3b3b3;\n}\n.sprite-sports {\n  background-image: url('https://olimpicolombia.s3.amazonaws.com/img/sprite-actions.png');\n  display: inline-block;\n  width: 50px;\n  height: 50px;\n  background-position: -344px -407px;\n}\n.sprite-sports.atletismo {\n  background-position: -406px -496px;\n}\n.sprite-sports.boxeo {\n  background-position: -258px -147px;\n}\n.sprite-sports.ciclismo-bmx {\n  background-position: -51px -293px;\n}\n.sprite-sports.ciclismo-montana {\n  background-position: -406px -404px;\n}\n.sprite-sports.ciclismo-pista {\n  background-position: 530px -351px;\n}\n.sprite-sports.ciclismo-ruta {\n  background-position: -51px -293px;\n}\n.sprite-sports.clavados {\n  background-position: -406px -404px;\n}\n.sprite-sports.ecuestre {\n  background-position: -406px -404px;\n}\n.sprite-sports.esgrima {\n  background-position: -406px -404px;\n}\n.sprite-sports.futbol {\n  background-position: -350px -398px;\n}\n.sprite-sports.natacion {\n  background-position: -398px -445px;\n}\n.sprite-sports.vela {\n  background-position: -199px -499px;\n}\n.sprite-sports.tiro-arco {\n  background-position: -105px -50px;\n}\n.sprite-sports.tiro {\n  background-position: -506px -199px;\n}\n.sprite-sports.tenis-mesa {\n  background-position: -360px -50px;\n}\n.sprite-sports.tenis {\n  background-position: -402px -402px;\n}\n.sprite-sports.rugby-a-siete {\n  background-position: -399px -496px;\n}\n.sprite-sports.taekwondo {\n  background-position: -100px -400px;\n}\n.sprite-sports.nado-sincronizado {\n  background-position: -458px -250px;\n}\n.sprite-sports.nado-levantamiento-pesas {\n  background-position: -149px -201px;\n}\n.sprite-sports.gimnasia-artistica {\n  background-position: -47px -447px;\n}\n.sprite-sports.golf {\n  background-position: -457px -346px;\n}\n.sprite-sports.esgrima {\n  background-position: -199px -398px;\n}\n.sprite-sports.ciclismo-montana {\n  background-position: -52px -298px;\n}\n.sprite-sports.ciclismo-ruta {\n  background-position: -358px 0px;\n}\n.sprite-sports.ciclismo-bmx {\n  background-position: -48px -247px;\n}\n.sprite-sports.salto-triple {\n  background-position: -200px -448px;\n}\n.sprite-sports.judo {\n  background-position: -56px 0px;\n}\n.sprite-sports.ciclismo-pista {\n  background-position: -101px -350px;\n}\n.sprite-sports.atletismo {\n  background-position: -157px -101px;\n}\n.sprite-sports.natación {\n  background-position: -399px -445px;\n}\n.sprite-sports.clavados {\n  background-position: -250px -348px;\n}\n.sprite-sports.ecuestre {\n  background-position: -410px -150px;\n}\n.sprite-sports.pesas {\n  background-position: -152px -201px;\n}\n.sprite-sports.salto_triple {\n  background-position: -157px -101px;\n}\n@-webkit-keyframes fadeInUp {\n  from {\n    -webkit-transform: translate3d(0, 40%, 0);\n    opacity: 0;\n    transform: translate3d(0, 40%, 0);\n  }\n  to {\n    -webkit-transform: none;\n    opacity: 1;\n    transform: none;\n  }\n}\n@keyframes fadeInUp {\n  from {\n    -webkit-transform: translate3d(0, 40%, 0);\n    opacity: 0;\n    transform: translate3d(0, 40%, 0);\n  }\n  to {\n    -webkit-transform: none;\n    opacity: 1;\n    transform: none;\n  }\n}\n/*Athlete*/\n.athlete {\n  text-align: center;\n  -webkit-animation: fadeInUp 1.3s;\n          animation: fadeInUp 1.3s;\n}\n.athlete-list {\n  font-family: \"TheSansRio2016\";\n  width: 100%;\n  height: 100%;\n  margin: 51px 0 10px 0;\n  overflow-y: scroll;\n  padding: 20px 0 50px 0;\n}\n/*scrollbar*/\n.athlete-list::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(199, 199, 199, 0.1);\n  background-color: #F5F5F5;\n}\n.athlete-list::-webkit-scrollbar {\n  width: 10px;\n  background-color: #F5F5F5;\n}\n.athlete-list::-webkit-scrollbar-thumb {\n  background-color: #cdcdcd;\n  border: 1px solid #b3b3b3;\n}\n.athlete i {\n  font-size: 156px;\n  padding: 67px 0;\n}\n.login,\n.registry {\n  text-align: center;\n  margin-top: 20px;\n}\n.registry p label {\n  display: block;\n}\n.registry p input {\n  width: 100%;\n  display: block;\n  height: 34px;\n  padding: 6px 12px;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #555;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n}\n.default-button {\n  display: inline-block;\n  padding: 12px 20px;\n  background-color: #fafafa;\n  border-radius: 4px;\n  border: 1px #dadada solid;\n  margin: 5px 5px;\n  font-weight: bolder;\n}\n.default-button i {\n  font-size: 27px;\n}\n", ""]);
 
 	// exports
 
@@ -62239,7 +62239,7 @@
 /* 49 */
 /***/ function(module, exports) {
 
-	module.exports = "<r-i18n class=\"pull-right\"></r-i18n>\r\n<br/>\r\n<sport-list title =\"SportList\"> </sport-list>\r\n";
+	module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\r\n    <div class=\"container-fluid\">\r\n        <!-- Brand and toggle get grouped for better mobile display -->\r\n        <div class=\"navbar-header\">\r\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#main-bar\">\r\n                <span class=\"sr-only\">Toggle navigation</span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n            </button>\r\n            <a class=\"navbar-brand\" href=\"/\">Colombia en RIO 2016</a>\r\n        </div>\r\n\r\n        <!-- Collect the nav links, forms, and other content for toggling -->\r\n        <div class=\"collapse navbar-collapse\" id=\"main-bar\">\r\n            <ul class=\"nav navbar-nav\">\r\n            </ul>\r\n            <ul class=\"nav navbar-nav navbar-right\">\r\n                <li>\r\n                    <!--<r-i18n class=\"pull-right\"></r-i18n>-->\r\n                </li>\r\n            </ul>\r\n        </div> <!-- /.navbar-collapse -->\r\n    </div> <!-- /.container-fluid -->\r\n</nav>\r\n<sport-list style=\"height: 100%;display: block\" title=\"SportList\"></sport-list>\r\n";
 
 /***/ },
 /* 50 */
@@ -62276,7 +62276,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, "main {\n  height: 100%;\n}\n", ""]);
 
 	// exports
 
@@ -62331,29 +62331,25 @@
 /* 54 */
 /***/ function(module, exports) {
 
-	module.exports = "<a target=\"_blank\" href=\"https://docs.angularjs.org/guide/component\">\r\n    <h>{{'general_component' | translate }} : {{ctrl.title}}</h>\r\n    <br/>\r\n    <a ng-click=\"ctrl.showAlert()\">Click here</a>\r\n\r\n    <span ng-repeat=\"sport in ctrl.sportList.sports\">\r\n        {{ sport.name }}\r\n    </span>\r\n</a>\r\n";
+	module.exports = "<div class=\"sport-list\">\r\n    <div class=\"col-md-4 col-sm-6 col-lg-3 sport\"\r\n         ng-repeat=\"sport in ctrl.sportList.sports\">\r\n            <div class=\"well\">\r\n                <h5 align=\"center\">\r\n                    <span> {{ sport.name }}  </span>\r\n                </h5>\r\n                <span class=\"sprite-sports {{ sport.icon }}\"></span>\r\n            </div>\r\n    </div>\r\n</div>\r\n\r\n";
 
 /***/ },
 /* 55 */
 /***/ function(module, exports) {
 
 	var sportListModule = angular.module('sportListModule');
-	sportListModule.factory('SportListService', ['SportsApiService',function (SportsApiService) {
-	        var Sports = function () {
-	            var _self = {}; //private
-	            _self.sports = [];
-
-	            this.getSports = function () {
-	                 var self = this;
-	                console.log('sucede');
-	                SportsApiService.get({}, function (response) {
-	                    console.log('esto sucede', response);
-	                });
-	            };
-
+	sportListModule.factory('SportListService', ['SportsApiService', function (SportsApiService) {
+	    var Sports = function () {
+	        this.sports = [];
+	        this.getSports = function () {
+	            var self = this;
+	            SportsApiService.loadSports({}, function (response) {
+	                self.sports = response;
+	            });
 	        };
-	        return new Sports();
-	    }]);
+	    };
+	    return new Sports();
+	}]);
 
 
 /***/ },
@@ -62391,7 +62387,7 @@
 
 
 	// module
-	exports.push([module.id, "sport-list {\n  display: block;\n  background-color: #fdffff;\n  padding: 5px;\n  margin: 8px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\n}\nsport-list h {\n  color: #3a4585;\n  font-size: 16px;\n}\nsport-list span {\n  color: #002300;\n}\n", ""]);
+	exports.push([module.id, ".sport-list {\n  font-family: \"TheSansRio2016\";\n  width: 100%;\n  height: 100%;\n  margin: 51px 0 10px 0;\n  padding: 20px 0 50px 0;\n}\n", ""]);
 
 	// exports
 
@@ -62415,10 +62411,15 @@
 
 	var restApiModule = angular.module('restApiModule');
 	restApiModule.factory('SportsApiService', ['$resource', function ($resource) {
-	    return $resource('https://olimpi-colombia.herokuapp.com/api/sports/?format=json', {});
+	    return $resource('api/sports', {}, {
+	        loadSports: {
+	            url: 'api/sports/?format=json',
+	            method: 'GET',
+	            isArray: true,
+	            params: {}
+	        }
+	    });
 	}]);
-
-
 
 
 /***/ }
