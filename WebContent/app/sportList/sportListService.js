@@ -12,8 +12,8 @@ sportListModule.factory('SportListService', ['SportsApiService', function (Sport
 
         this.getAthletesBySport = function (sport) {
             var self = this;
+            self.athletesBySport = [];
             SportsApiService.loadAthletesBySport({sportName: sport.name}, function (response) {
-                console.log(response);
                 self.athletesBySport = response;
             });
         };
