@@ -26,6 +26,13 @@ require('../app/commons/directives/ripple/rippleDirective.js');
 require('../app/commons/directives/ripple/ripple.less');
 
 /**
+ * common Services
+ **/
+require('../app/commons/services/commonServicesModule.js');
+require('../app/commons/services/modal/modalService.js');
+
+
+/**
  * mainComponent Module
  **/
 require('../app/main/mainModule.js');

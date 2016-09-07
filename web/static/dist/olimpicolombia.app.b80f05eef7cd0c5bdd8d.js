@@ -49,10 +49,12 @@
 	var appModules = [
 	    'ngCookies',
 	    'ui.bootstrap',
+	    'ui.bootstrap.modal',
 	    'pascalprecht.translate',
 	    'ngRoute',
 	    'i18nModule',
 	    'commonDirectivesModule',
+	    'commonServicesModule',
 	    'mainModule',
 	    'restApiModule',
 	    'sportListModule'
@@ -96,23 +98,30 @@
 	__webpack_require__(45);
 
 	/**
-	 * mainComponent Module
+	 * common Services
 	 **/
 	__webpack_require__(47);
 	__webpack_require__(48);
+
+
+	/**
+	 * mainComponent Module
+	 **/
+	__webpack_require__(49);
 	__webpack_require__(50);
+	__webpack_require__(52);
 
 
 	/**
 	 * sportList Module
 	 **/
-	 __webpack_require__(52);
-	 __webpack_require__(53);
+	 __webpack_require__(54);
 	 __webpack_require__(55);
-	 __webpack_require__(56);
+	 __webpack_require__(57);
+	 __webpack_require__(58);
 
-	__webpack_require__(58);
-	__webpack_require__(59);
+	__webpack_require__(60);
+	__webpack_require__(61);
 
 
 
@@ -62195,6 +62204,56 @@
 /* 47 */
 /***/ function(module, exports) {
 
+	angular.module('commonServicesModule', []);
+
+
+
+/***/ },
+/* 48 */
+/***/ function(module, exports) {
+
+	var commonServicesModule = angular.module('commonServicesModule');
+	commonServicesModule.factory('$bzModal', ['$uibModal', function ($uibModal) {
+	    var ModalAreaService = function () {
+	        var _self = {}; //private
+	        _self.modalInstance;
+	        this.showPopup = function (data, settings) {
+	            if (_self.modalInstance) {
+	                _self.modalInstance.close();
+	            }
+
+	            settings = settings || {};
+	            if ('templateUrl' in settings && 'template' in settings) {
+	                delete settings.template;
+	            }
+	            settings.resolve = {
+	                data: function () {
+	                    return data;
+	                }
+	            };
+	            _self.modalInstance = $uibModal.open(settings);
+	            return _self.modalInstance.result;
+	        };
+	        this.closePopup = function () {
+	            _self.modalInstance.close();
+	            _self.modalInstance = undefined;
+	        };
+	        this.getModalInstance = function () {
+	            return _self.modalInstance;
+	        };
+
+	        this.setModalInstance = function (value) {
+	            _self.modalInstance = value;
+	        };
+	    };
+	    return new ModalAreaService();
+	}]);
+
+
+/***/ },
+/* 49 */
+/***/ function(module, exports) {
+
 	angular.module('mainModule', []);
 
 	/* Include this part into your dependencies file
@@ -62210,7 +62269,7 @@
 
 
 /***/ },
-/* 48 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var  mainModule = angular.module('mainModule');
@@ -62231,24 +62290,24 @@
 	    },
 	    controller: MainController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(49)
+	    template: __webpack_require__(51)
 	});
 
 
 /***/ },
-/* 49 */
+/* 51 */
 /***/ function(module, exports) {
 
 	module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\r\n    <div class=\"container-fluid\">\r\n        <!-- Brand and toggle get grouped for better mobile display -->\r\n        <div class=\"navbar-header\">\r\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#main-bar\">\r\n                <span class=\"sr-only\">Toggle navigation</span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n            </button>\r\n            <a class=\"navbar-brand\" href=\"/\">Colombia en RIO 2016</a>\r\n        </div>\r\n\r\n        <!-- Collect the nav links, forms, and other content for toggling -->\r\n        <div class=\"collapse navbar-collapse\" id=\"main-bar\">\r\n            <ul class=\"nav navbar-nav\">\r\n            </ul>\r\n            <ul class=\"nav navbar-nav navbar-right\">\r\n                <li>\r\n                    <!--<r-i18n class=\"pull-right\"></r-i18n>-->\r\n                </li>\r\n            </ul>\r\n        </div> <!-- /.navbar-collapse -->\r\n    </div> <!-- /.container-fluid -->\r\n</nav>\r\n<sport-list style=\"height: 100%;display: block\" title=\"SportList\"></sport-list>\r\n";
 
 /***/ },
-/* 50 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(51);
+	var content = __webpack_require__(53);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(34)(content, {});
@@ -62268,7 +62327,7 @@
 	}
 
 /***/ },
-/* 51 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(28)();
@@ -62282,7 +62341,7 @@
 
 
 /***/ },
-/* 52 */
+/* 54 */
 /***/ function(module, exports) {
 
 	angular.module('sportListModule', []);
@@ -62300,11 +62359,11 @@
 
 
 /***/ },
-/* 53 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var  sportListModule = angular.module('sportListModule');
-	var SportListController = ['$i18n', 'SportListService', function ($i18n, SportListService) {
+	var sportListModule = angular.module('sportListModule');
+	var SportListController = ['$i18n', 'SportListService', '$bzModal', function ($i18n, SportListService, $bzModal) {
 	    /**
 	     * Tip: add here only visual logic
 	     */
@@ -62313,6 +62372,14 @@
 	    self.sportList.getSports();
 	    self.showAlert = function () {
 	        alert($i18n.translate.general_alert);
+	    };
+	    self.showModalAthletesBySport = function (sport) {
+	        console.log(sport.name);
+	        self.sportList.sportSelected = sport;
+	        $bzModal.showPopup({}, {
+	            template: '<span>Boxeo</span>',
+	            size: '300px'
+	        });
 	    };
 	}];
 
@@ -62323,24 +62390,25 @@
 	    },
 	    controller: SportListController,
 	    controllerAs: 'ctrl',
-	    template: __webpack_require__(54)
+	    template: __webpack_require__(56)
 	});
 
 
 /***/ },
-/* 54 */
+/* 56 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"sport-list\">\r\n    <div class=\"col-md-4 col-sm-6 col-lg-3 sport\"\r\n         ng-repeat=\"sport in ctrl.sportList.sports\">\r\n            <div class=\"well\">\r\n                <h5 align=\"center\">\r\n                    <span> {{ sport.name }}  </span>\r\n                </h5>\r\n                <span class=\"sprite-sports {{ sport.icon }}\"></span>\r\n            </div>\r\n    </div>\r\n</div>\r\n\r\n";
+	module.exports = "<div class=\"sport-list\">\r\n    <div class=\"col-md-4 col-sm-6 col-lg-3 sport\"\r\n         ng-repeat=\"sport in ctrl.sportList.sports\"\r\n         ng-click=\"ctrl.showModalAthletesBySport(sport)\">\r\n        <div class=\"well\">\r\n            <h5 align=\"center\">\r\n                <span> {{ sport.name }}  </span>\r\n            </h5>\r\n            <span class=\"sprite-sports {{ sport.icon }}\"></span>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n";
 
 /***/ },
-/* 55 */
+/* 57 */
 /***/ function(module, exports) {
 
 	var sportListModule = angular.module('sportListModule');
 	sportListModule.factory('SportListService', ['SportsApiService', function (SportsApiService) {
 	    var Sports = function () {
 	        this.sports = [];
+	        this.sportSelected ={};
 	        this.getSports = function () {
 	            var self = this;
 	            SportsApiService.loadSports({}, function (response) {
@@ -62353,13 +62421,13 @@
 
 
 /***/ },
-/* 56 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(57);
+	var content = __webpack_require__(59);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(34)(content, {});
@@ -62379,7 +62447,7 @@
 	}
 
 /***/ },
-/* 57 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(28)();
@@ -62393,7 +62461,7 @@
 
 
 /***/ },
-/* 58 */
+/* 60 */
 /***/ function(module, exports) {
 
 	var restApiModule = angular.module('restApiModule', ['ngResource', 'angular-loading-bar']);
@@ -62406,7 +62474,7 @@
 
 
 /***/ },
-/* 59 */
+/* 61 */
 /***/ function(module, exports) {
 
 	var restApiModule = angular.module('restApiModule');

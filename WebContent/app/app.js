@@ -3,10 +3,12 @@ var appConfiguration;
 var appModules = [
     'ngCookies',
     'ui.bootstrap',
+    'ui.bootstrap.modal',
     'pascalprecht.translate',
     'ngRoute',
     'i18nModule',
     'commonDirectivesModule',
+    'commonServicesModule',
     'mainModule',
     'restApiModule',
     'sportListModule'

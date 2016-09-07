@@ -1,5 +1,5 @@
-var  sportListModule = angular.module('sportListModule');
-var SportListController = ['$i18n', 'SportListService', function ($i18n, SportListService) {
+var sportListModule = angular.module('sportListModule');
+var SportListController = ['$i18n', 'SportListService', '$bzModal', function ($i18n, SportListService, $bzModal) {
     /**
      * Tip: add here only visual logic
      */
@@ -8,6 +8,14 @@ var SportListController = ['$i18n', 'SportListService', function ($i18n, SportLi
     self.sportList.getSports();
     self.showAlert = function () {
         alert($i18n.translate.general_alert);
+    };
+    self.showModalAthletesBySport = function (sport) {
+        console.log(sport.name);
+        self.sportList.sportSelected = sport;
+        $bzModal.showPopup({}, {
+            template: '<span>Boxeo</span>',
+            size: '300px'
+        });
     };
 }];
 

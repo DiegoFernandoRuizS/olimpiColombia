@@ -1,12 +1,13 @@
 <div class="sport-list">
     <div class="col-md-4 col-sm-6 col-lg-3 sport"
-         ng-repeat="sport in ctrl.sportList.sports">
-            <div class="well">
-                <h5 align="center">
-                    <span> {{ sport.name }}  </span>
-                </h5>
-                <span class="sprite-sports {{ sport.icon }}"></span>
-            </div>
+         ng-repeat="sport in ctrl.sportList.sports"
+         ng-click="ctrl.showModalAthletesBySport(sport)">
+        <div class="well">
+            <h5 align="center">
+                <span> {{ sport.name }}  </span>
+            </h5>
+            <span class="sprite-sports {{ sport.icon }}"></span>
+        </div>
     </div>
 </div>
 
