@@ -34,10 +34,13 @@ require('../app/main/main.less');
 
 
 /**
- * firstComponent Module
+ * sportList Module
  **/
-require('../app/firstComponent/firstComponentModule.js');
-require('../app/firstComponent/firstComponentDirective.js');
-require('../app/firstComponent/firstComponent.less');
+ require('../app/sportList/sportListModule.js');
+ require('../app/sportList/sportListComponent.js');
+ require('../app/sportList/sportListService.js');
+ require('../app/sportList/sportList.less');
 
+require('../app/restApi/restApiModule.js');
+require('../app/restApi/sportsApiService.js');
 

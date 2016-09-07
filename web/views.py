@@ -129,7 +129,7 @@ class SportListView(ListAPIView):
     serializer_class = SportSerializer
     queryset = Sport.objects.all()
 
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
 
 class AthleteBySportListView(ListAPIView):

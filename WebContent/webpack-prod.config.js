@@ -15,8 +15,7 @@ module.exports = {
       {
         test: /[.]jade$/,
         loader: PathRewriterPlugin.rewriteAndEmit({
-          //name: '[path][name].html',
-          name: '../../../web/templates/[name].html', //generate index.html on root folder
+          name: '../../../web/templates/[name].html', //generate home.html on templates folder
           loader: 'jade-html?' + JSON.stringify({pretty: true})
         })
       },
@@ -78,7 +77,7 @@ module.exports = {
     },
     proxy: {
       "/api*": {
-        target: 'http://localhost:42716',
+        target: 'http://localhost:8000',
         secure: false
       }
     }

@@ -1,11 +1,11 @@
-describe('Module to test: firstComponent', function () {
-
-    beforeEach(module('firstComponentModule'));
+describe('Module to test: sportList', function () {
+   var element;
+    beforeEach(module('sportListModule'));
     beforeEach(module('pascalprecht.translate'));
     /***
      * Test for directive
      * */
-    describe('firstComponent directive', function () {
+    describe('sportList directive', function () {
         var $compile,
             $rootScope;
         beforeEach(inject(function (_$compile_, _$rootScope_) {
@@ -15,7 +15,7 @@ describe('Module to test: firstComponent', function () {
         }));
         it('Replaces the element with the appropriate content', function () {
             // Compile a piece of HTML containing the directive
-            var element = $compile('<first-component></first-component>')($rootScope);
+            element = $compile('<sport-list></sport-list>')($rootScope);
             $rootScope.$digest();
             // Check that the compiled element contains the templated content
         });
@@ -23,21 +23,19 @@ describe('Module to test: firstComponent', function () {
     /***
      * Test for controller
      * */
-    describe('firstComponent Controller', function () {
-        var _firstComponentController;
-
-        var _scope;
-        it('should be Defined', inject(function ($controller, $rootScope) {
-            _scope = $rootScope.$new();
-            _firstComponentController = $controller('FirstComponentController', {
-            });
-            expect(_firstComponentController).toBeDefined();
+    describe('sportList Controller', function () {
+        var _sportListController;
+        beforeEach(function() {
+            _sportListController = element.controller('sportList');
+        });
+        it('should be Defined', inject(function () {
+            expect(_sportListController).toBeDefined();
         }));
     });
     /***
      * Test for service
      * */
-    describe('firstComponent Service', function () {
+    describe('sportList Service', function () {
 
     });
 });

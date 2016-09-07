@@ -2,13 +2,10 @@
   "errors": [],
   "warnings": [],
   "version": "1.13.2",
-  "hash": "6e15533292ff5253eb7d",
+  "hash": "e7a6f06da0c3b5fb77b5",
   "publicPath": "https://olimpicolombia.s3.amazonaws.com/dist/",
   "assetsByChunkName": {
-    "olimpicolombia.app": [
-      "olimpicolombia.app.c7d392b9b5f1f09fbf56.js",
-      "olimpicolombia.app.c7d392b9b5f1f09fbf56.js.map"
-    ]
+    "olimpicolombia.app": "olimpicolombia.app.d9e16d0632bd9bb9836e.js"
   },
   "assets": [
     {
@@ -42,18 +39,8 @@
       "chunkNames": []
     },
     {
-      "name": "olimpicolombia.app.c7d392b9b5f1f09fbf56.js",
-      "size": 2406218,
-      "chunks": [
-        0
-      ],
-      "chunkNames": [
-        "olimpicolombia.app"
-      ]
-    },
-    {
-      "name": "olimpicolombia.app.c7d392b9b5f1f09fbf56.js.map",
-      "size": 2845461,
+      "name": "olimpicolombia.app.d9e16d0632bd9bb9836e.js",
+      "size": 2400778,
       "chunks": [
         0
       ],
@@ -69,15 +56,14 @@
       "initial": true,
       "entry": true,
       "extraAsync": false,
-      "size": 2340061,
+      "size": 2341430,
       "names": [
         "olimpicolombia.app"
       ],
       "files": [
-        "olimpicolombia.app.c7d392b9b5f1f09fbf56.js",
-        "olimpicolombia.app.c7d392b9b5f1f09fbf56.js.map"
+        "olimpicolombia.app.d9e16d0632bd9bb9836e.js"
       ],
-      "hash": "c7d392b9b5f1f09fbf56",
+      "hash": "d9e16d0632bd9bb9836e",
       "parents": [],
       "origins": [
         {
@@ -98,8 +84,8 @@
       "identifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\app.js",
       "name": "./app/app.js",
       "index": 0,
-      "index2": 56,
-      "size": 425,
+      "index2": 59,
+      "size": 466,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -113,15 +99,15 @@
       "errors": 0,
       "warnings": 0,
       "reasons": [],
-      "source": "require('./dependencies.js');\r\nvar appConfiguration;\r\nvar appModules = [\r\n  'ngCookies',\r\n  'ui.bootstrap',\r\n  'pascalprecht.translate',\r\n  'ngRoute',\r\n  'i18nModule',\r\n  'commonDirectivesModule',\r\n  'mainModule',\r\n  'firstComponentModule'\r\n];\r\n\r\nappConfiguration = appConfigurations.productionConfiguration;\r\n\r\nangular.module('helloworldApp', appModules, appConfiguration);\r\nangular.bootstrap(document, ['helloworldApp']);\r\n"
+      "source": "require('./dependencies.js');\r\nvar appConfiguration;\r\nvar appModules = [\r\n    'ngCookies',\r\n    'ui.bootstrap',\r\n    'pascalprecht.translate',\r\n    'ngRoute',\r\n    'i18nModule',\r\n    'commonDirectivesModule',\r\n    'mainModule',\r\n    'restApiModule',\r\n    'sportListModule'\r\n];\r\n\r\nappConfiguration = appConfigurations.productionConfiguration;\r\n\r\nangular.module('OlimpiColombiaApp', appModules, appConfiguration);\r\nangular.bootstrap(document, ['OlimpiColombiaApp']);\r\n"
     },
     {
       "id": 1,
       "identifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\dependencies.js",
       "name": "./app/dependencies.js",
       "index": 1,
-      "index2": 55,
-      "size": 1070,
+      "index2": 58,
+      "size": 1182,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -145,7 +131,7 @@
           "loc": "1:0-28"
         }
       ],
-      "source": "require('./../home.jade');\r\nrequire('./vendors.js');\r\n\r\nrequire('../app/appConfig.js');\r\n\r\n/**\r\n * Global styles\r\n * styles of controls should be in each module\r\n **/\r\nrequire('../app/styles/css/bootstrap.less');\r\nrequire('../app/styles/css/bootstrap-theme.less');\r\nrequire('../app/styles/css/app.less');\r\n\r\n/**\r\n * Internationalization = i18n\r\n **/\r\nrequire('../app/i18n/i18nModule.js');\r\nrequire('../app/i18n/i18nDirective.js');\r\nrequire('../app/i18n/i18nService.js');\r\n\r\n/**\r\n * common Directives\r\n **/\r\nrequire('../app/commons/directives/commonDirectivesModule.js');\r\nrequire('../app/commons/directives/ripple/rippleDirective.js');\r\nrequire('../app/commons/directives/ripple/ripple.less');\r\n\r\n/**\r\n * mainComponent Module\r\n **/\r\nrequire('../app/main/mainModule.js');\r\nrequire('../app/main/mainComponent.js');\r\nrequire('../app/main/main.less');\r\n\r\n\r\n/**\r\n * firstComponent Module\r\n **/\r\nrequire('../app/firstComponent/firstComponentModule.js');\r\nrequire('../app/firstComponent/firstComponentDirective.js');\r\nrequire('../app/firstComponent/firstComponent.less');\r\n\r\n\r\n"
+      "source": "require('./../home.jade');\r\nrequire('./vendors.js');\r\n\r\nrequire('../app/appConfig.js');\r\n\r\n/**\r\n * Global styles\r\n * styles of controls should be in each module\r\n **/\r\nrequire('../app/styles/css/bootstrap.less');\r\nrequire('../app/styles/css/bootstrap-theme.less');\r\nrequire('../app/styles/css/app.less');\r\n\r\n/**\r\n * Internationalization = i18n\r\n **/\r\nrequire('../app/i18n/i18nModule.js');\r\nrequire('../app/i18n/i18nDirective.js');\r\nrequire('../app/i18n/i18nService.js');\r\n\r\n/**\r\n * common Directives\r\n **/\r\nrequire('../app/commons/directives/commonDirectivesModule.js');\r\nrequire('../app/commons/directives/ripple/rippleDirective.js');\r\nrequire('../app/commons/directives/ripple/ripple.less');\r\n\r\n/**\r\n * mainComponent Module\r\n **/\r\nrequire('../app/main/mainModule.js');\r\nrequire('../app/main/mainComponent.js');\r\nrequire('../app/main/main.less');\r\n\r\n\r\n/**\r\n * sportList Module\r\n **/\r\n require('../app/sportList/sportListModule.js');\r\n require('../app/sportList/sportListComponent.js');\r\n require('../app/sportList/sportListService.js');\r\n require('../app/sportList/sportList.less');\r\n\r\nrequire('../app/restApi/restApiModule.js');\r\nrequire('../app/restApi/sportsApiService.js');\r\n\r\n"
     },
     {
       "id": 2,
@@ -1090,10 +1076,10 @@
           "loc": "1:27-85"
         },
         {
-          "moduleId": 56,
-          "moduleIdentifier": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\css-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\autoprefixer-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\less-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\firstComponent\\firstComponent.less",
-          "module": "./~/css-loader!./~/autoprefixer-loader!./~/less-loader!./app/firstComponent/firstComponent.less",
-          "moduleName": "./~/css-loader!./~/autoprefixer-loader!./~/less-loader!./app/firstComponent/firstComponent.less",
+          "moduleId": 57,
+          "moduleIdentifier": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\css-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\autoprefixer-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\less-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\sportList\\sportList.less",
+          "module": "./~/css-loader!./~/autoprefixer-loader!./~/less-loader!./app/sportList/sportList.less",
+          "moduleName": "./~/css-loader!./~/autoprefixer-loader!./~/less-loader!./app/sportList/sportList.less",
           "type": "cjs require",
           "userRequest": "./../../node_modules/css-loader/lib/css-base.js",
           "loc": "1:27-85"
@@ -1346,10 +1332,10 @@
           "loc": "7:13-71"
         },
         {
-          "moduleId": 55,
-          "moduleIdentifier": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\style-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\css-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\autoprefixer-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\less-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\firstComponent\\firstComponent.less",
-          "module": "./app/firstComponent/firstComponent.less",
-          "moduleName": "./app/firstComponent/firstComponent.less",
+          "moduleId": 56,
+          "moduleIdentifier": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\style-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\css-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\autoprefixer-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\less-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\sportList\\sportList.less",
+          "module": "./app/sportList/sportList.less",
+          "moduleName": "./app/sportList/sportList.less",
           "type": "cjs require",
           "userRequest": "!./../../node_modules/style-loader/addStyles.js",
           "loc": "7:13-71"
@@ -1811,7 +1797,7 @@
       "name": "./app/main/main.html",
       "index": 49,
       "index2": 46,
-      "size": 110,
+      "size": 122,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -1835,7 +1821,7 @@
           "loc": "19:14-36"
         }
       ],
-      "source": "module.exports = \"<r-i18n class=\\\"pull-right\\\"></r-i18n>\\r\\n<br/>\\r\\n<first-component></first-component>\\r\\n\";"
+      "source": "module.exports = \"<r-i18n class=\\\"pull-right\\\"></r-i18n>\\r\\n<br/>\\r\\n<sport-list title =\\\"SportList\\\"> </sport-list>\\r\\n\";"
     },
     {
       "id": 50,
@@ -1903,11 +1889,11 @@
     },
     {
       "id": 52,
-      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\firstComponent\\firstComponentModule.js",
-      "name": "./app/firstComponent/firstComponentModule.js",
+      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\sportList\\sportListModule.js",
+      "name": "./app/sportList/sportListModule.js",
       "index": 52,
       "index2": 50,
-      "size": 47,
+      "size": 348,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -1927,19 +1913,19 @@
           "module": "./app/dependencies.js",
           "moduleName": "./app/dependencies.js",
           "type": "cjs require",
-          "userRequest": "../app/firstComponent/firstComponentModule.js",
-          "loc": "39:0-56"
+          "userRequest": "../app/sportList/sportListModule.js",
+          "loc": "39:1-47"
         }
       ],
-      "source": "angular.module('firstComponentModule', []);\r\n\r\n"
+      "source": "angular.module('sportListModule', []);\r\n\r\n/* Include this part into your dependencies file\r\n require('../app/sportList/sportListModule.js');\r\n require('../app/sportList/sportListComponent.js');\r\n require('../app/sportList/sportList.less');\r\n */\r\n\r\n\r\n/* Include this part into your app.html file\r\n <sport-list title =\"SportList\"> </sport-list>\r\n*/\r\n"
     },
     {
       "id": 53,
-      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\firstComponent\\firstComponentDirective.js",
-      "name": "./app/firstComponent/firstComponentDirective.js",
+      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\sportList\\sportListComponent.js",
+      "name": "./app/sportList/sportListComponent.js",
       "index": 53,
       "index2": 52,
-      "size": 602,
+      "size": 627,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -1959,19 +1945,19 @@
           "module": "./app/dependencies.js",
           "moduleName": "./app/dependencies.js",
           "type": "cjs require",
-          "userRequest": "../app/firstComponent/firstComponentDirective.js",
-          "loc": "40:0-59"
+          "userRequest": "../app/sportList/sportListComponent.js",
+          "loc": "40:1-50"
         }
       ],
-      "source": "var firstComponentModule = angular.module('firstComponentModule');\r\nfirstComponentModule.controller('FirstComponentController', ['$i18n', function ($i18n) {\r\n    /**\r\n     * Tip: add here only visual logic\r\n     */\r\n    var vm = this;\r\n    vm.showAlert = function () {\r\n        alert($i18n.translate.general_alert);\r\n    };\r\n}]);\r\n\r\nfirstComponentModule.directive('firstComponent', [function () {\r\n    return {\r\n        restrict: 'E',\r\n        scope: {},\r\n        controller: 'FirstComponentController',\r\n        controllerAs: 'ctrl',\r\n        template: require('./firstComponent.html')\r\n    };\r\n}]);\r\n"
+      "source": "var  sportListModule = angular.module('sportListModule');\r\nvar SportListController = ['$i18n', 'SportListService', function ($i18n, SportListService) {\r\n    /**\r\n     * Tip: add here only visual logic\r\n     */\r\n    var self = this;\r\n    self.sportList = SportListService;\r\n    self.sportList.getSports();\r\n    self.showAlert = function () {\r\n        alert($i18n.translate.general_alert);\r\n    };\r\n}];\r\n\r\nsportListModule.component('sportList', {\r\n    transclude: true,\r\n    bindings: {\r\n        title: '@'\r\n    },\r\n    controller: SportListController,\r\n    controllerAs: 'ctrl',\r\n    template: require('./sportList.html')\r\n});\r\n"
     },
     {
       "id": 54,
-      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\html-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\firstComponent\\firstComponent.html",
-      "name": "./app/firstComponent/firstComponent.html",
+      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\html-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\sportList\\sportList.html",
+      "name": "./app/sportList/sportList.html",
       "index": 54,
       "index2": 51,
-      "size": 231,
+      "size": 241,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -1980,30 +1966,30 @@
         0
       ],
       "assets": [],
-      "issuer": "D:\\Development\\olimpiColombia\\WebContent\\app\\firstComponent\\firstComponentDirective.js",
+      "issuer": "D:\\Development\\olimpiColombia\\WebContent\\app\\sportList\\sportListComponent.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
           "moduleId": 53,
-          "moduleIdentifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\firstComponent\\firstComponentDirective.js",
-          "module": "./app/firstComponent/firstComponentDirective.js",
-          "moduleName": "./app/firstComponent/firstComponentDirective.js",
+          "moduleIdentifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\sportList\\sportListComponent.js",
+          "module": "./app/sportList/sportListComponent.js",
+          "moduleName": "./app/sportList/sportListComponent.js",
           "type": "cjs require",
-          "userRequest": "./firstComponent.html",
-          "loc": "18:18-50"
+          "userRequest": "./sportList.html",
+          "loc": "21:14-41"
         }
       ],
-      "source": "module.exports = \"<h>{{'general_first_component' | translate}}</h>\\r\\n<br/>\\r\\n<span>{{'general_copyright' | translate}},</span>\\r\\n<button ripple=\\\"#ffffff\\\" class=\\\"ripple\\\" ng-click=\\\"ctrl.showAlert()\\\">Click here</button>\\r\\n\";"
+      "source": "module.exports = \"<a target=\\\"_blank\\\" href=\\\"https://docs.angularjs.org/guide/component\\\">\\r\\n    <h>{{'general_component' | translate }} : {{ctrl.title}}</h>\\r\\n    <br/>\\r\\n    <a ng-click=\\\"ctrl.showAlert()\\\">Click here</a>\\r\\n</a>\\r\\n\";"
     },
     {
       "id": 55,
-      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\style-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\css-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\autoprefixer-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\less-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\firstComponent\\firstComponent.less",
-      "name": "./app/firstComponent/firstComponent.less",
+      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\sportList\\sportListService.js",
+      "name": "./app/sportList/sportListService.js",
       "index": 55,
-      "index2": 54,
-      "size": 1225,
+      "index2": 53,
+      "size": 595,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -2023,19 +2009,19 @@
           "module": "./app/dependencies.js",
           "moduleName": "./app/dependencies.js",
           "type": "cjs require",
-          "userRequest": "../app/firstComponent/firstComponent.less",
-          "loc": "41:0-52"
+          "userRequest": "../app/sportList/sportListService.js",
+          "loc": "41:1-48"
         }
       ],
-      "source": "// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// load the styles\nvar content = require(\"!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./firstComponent.less\");\nif(typeof content === 'string') content = [[module.id, content, '']];\n// add the styles to the DOM\nvar update = require(\"!./../../node_modules/style-loader/addStyles.js\")(content, {});\nif(content.locals) module.exports = content.locals;\n// Hot Module Replacement\nif(module.hot) {\n\t// When the styles change, update the <style> tags\n\tif(!content.locals) {\n\t\tmodule.hot.accept(\"!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./firstComponent.less\", function() {\n\t\t\tvar newContent = require(\"!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./firstComponent.less\");\n\t\t\tif(typeof newContent === 'string') newContent = [[module.id, newContent, '']];\n\t\t\tupdate(newContent);\n\t\t});\n\t}\n\t// When the module is disposed, remove the <style> tags\n\tmodule.hot.dispose(function() { update(); });\n}"
+      "source": "var sportListModule = angular.module('sportListModule');\r\nsportListModule.factory('SportListService', ['SportsApiService',function (SportsApiService) {\r\n        var Sports = function () {\r\n            var _self = {}; //private\r\n            _self.sports = [];\r\n\r\n            this.getSports = function () {\r\n                 var self = this;\r\n                console.log('sucede');\r\n                SportsApiService.get({}, function (response) {\r\n                    console.log('esto sucede', response);\r\n                });\r\n            };\r\n\r\n        };\r\n        return new Sports();\r\n    }]);\r\n"
     },
     {
       "id": 56,
-      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\css-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\autoprefixer-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\less-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\firstComponent\\firstComponent.less",
-      "name": "./~/css-loader!./~/autoprefixer-loader!./~/less-loader!./app/firstComponent/firstComponent.less",
+      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\style-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\css-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\autoprefixer-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\less-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\sportList\\sportList.less",
+      "name": "./app/sportList/sportList.less",
       "index": 56,
-      "index2": 53,
-      "size": 482,
+      "index2": 55,
+      "size": 1210,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -2044,22 +2030,118 @@
         0
       ],
       "assets": [],
-      "issuer": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\style-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\css-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\autoprefixer-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\less-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\firstComponent\\firstComponent.less",
+      "issuer": "D:\\Development\\olimpiColombia\\WebContent\\app\\dependencies.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 55,
-          "moduleIdentifier": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\style-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\css-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\autoprefixer-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\less-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\firstComponent\\firstComponent.less",
-          "module": "./app/firstComponent/firstComponent.less",
-          "moduleName": "./app/firstComponent/firstComponent.less",
+          "moduleId": 1,
+          "moduleIdentifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\dependencies.js",
+          "module": "./app/dependencies.js",
+          "moduleName": "./app/dependencies.js",
           "type": "cjs require",
-          "userRequest": "!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./firstComponent.less",
-          "loc": "4:14-181"
+          "userRequest": "../app/sportList/sportList.less",
+          "loc": "42:1-43"
         }
       ],
-      "source": "exports = module.exports = require(\"./../../node_modules/css-loader/lib/css-base.js\")();\n// imports\n\n\n// module\nexports.push([module.id, \"first-component {\\n  display: block;\\n  background-color: #fdffff;\\n  padding: 5px;\\n  margin: 8px;\\n  border-radius: 3px;\\n  border: 1px solid #dadada;\\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\\n}\\nfirst-component h {\\n  color: #3a4585;\\n  font-size: 16px;\\n}\\nfirst-component span {\\n  color: #002300;\\n}\\n\", \"\"]);\n\n// exports\n"
+      "source": "// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// load the styles\nvar content = require(\"!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./sportList.less\");\nif(typeof content === 'string') content = [[module.id, content, '']];\n// add the styles to the DOM\nvar update = require(\"!./../../node_modules/style-loader/addStyles.js\")(content, {});\nif(content.locals) module.exports = content.locals;\n// Hot Module Replacement\nif(module.hot) {\n\t// When the styles change, update the <style> tags\n\tif(!content.locals) {\n\t\tmodule.hot.accept(\"!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./sportList.less\", function() {\n\t\t\tvar newContent = require(\"!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./sportList.less\");\n\t\t\tif(typeof newContent === 'string') newContent = [[module.id, newContent, '']];\n\t\t\tupdate(newContent);\n\t\t});\n\t}\n\t// When the module is disposed, remove the <style> tags\n\tmodule.hot.dispose(function() { update(); });\n}"
+    },
+    {
+      "id": 57,
+      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\css-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\autoprefixer-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\less-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\sportList\\sportList.less",
+      "name": "./~/css-loader!./~/autoprefixer-loader!./~/less-loader!./app/sportList/sportList.less",
+      "index": 57,
+      "index2": 54,
+      "size": 467,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\style-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\css-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\autoprefixer-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\less-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\sportList\\sportList.less",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 56,
+          "moduleIdentifier": "D:\\Development\\olimpiColombia\\WebContent\\node_modules\\style-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\css-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\autoprefixer-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\node_modules\\less-loader\\index.js!D:\\Development\\olimpiColombia\\WebContent\\app\\sportList\\sportList.less",
+          "module": "./app/sportList/sportList.less",
+          "moduleName": "./app/sportList/sportList.less",
+          "type": "cjs require",
+          "userRequest": "!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./sportList.less",
+          "loc": "4:14-176"
+        }
+      ],
+      "source": "exports = module.exports = require(\"./../../node_modules/css-loader/lib/css-base.js\")();\n// imports\n\n\n// module\nexports.push([module.id, \"sport-list {\\n  display: block;\\n  background-color: #fdffff;\\n  padding: 5px;\\n  margin: 8px;\\n  border-radius: 3px;\\n  border: 1px solid #dadada;\\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\\n}\\nsport-list h {\\n  color: #3a4585;\\n  font-size: 16px;\\n}\\nsport-list span {\\n  color: #002300;\\n}\\n\", \"\"]);\n\n// exports\n"
+    },
+    {
+      "id": 58,
+      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\restApi\\restApiModule.js",
+      "name": "./app/restApi/restApiModule.js",
+      "index": 58,
+      "index2": 56,
+      "size": 105,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "D:\\Development\\olimpiColombia\\WebContent\\app\\dependencies.js",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\dependencies.js",
+          "module": "./app/dependencies.js",
+          "moduleName": "./app/dependencies.js",
+          "type": "cjs require",
+          "userRequest": "../app/restApi/restApiModule.js",
+          "loc": "44:0-42"
+        }
+      ],
+      "source": "var restApiModule = angular.module('restApiModule', ['ngResource', 'angular-loading-bar']);\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+    },
+    {
+      "id": 59,
+      "identifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\restApi\\sportsApiService.js",
+      "name": "./app/restApi/sportsApiService.js",
+      "index": 59,
+      "index2": 57,
+      "size": 198,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "D:\\Development\\olimpiColombia\\WebContent\\app\\dependencies.js",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "D:\\Development\\olimpiColombia\\WebContent\\app\\dependencies.js",
+          "module": "./app/dependencies.js",
+          "moduleName": "./app/dependencies.js",
+          "type": "cjs require",
+          "userRequest": "../app/restApi/sportsApiService.js",
+          "loc": "45:0-45"
+        }
+      ],
+      "source": "var restApiModule = angular.module('restApiModule');\r\nrestApiModule.factory('SportsApiService', ['$resource', function ($resource) {\r\n    return $resource('api/sports/?format=json', {});\r\n}]);\r\n\r\n\r\n"
     }
   ],
   "filteredModules": 0,

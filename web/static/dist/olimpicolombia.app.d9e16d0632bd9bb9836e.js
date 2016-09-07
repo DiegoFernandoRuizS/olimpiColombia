@@ -47,20 +47,21 @@
 	__webpack_require__(1);
 	var appConfiguration;
 	var appModules = [
-	  'ngCookies',
-	  'ui.bootstrap',
-	  'pascalprecht.translate',
-	  'ngRoute',
-	  'i18nModule',
-	  'commonDirectivesModule',
-	  'mainModule',
-	  'firstComponentModule'
+	    'ngCookies',
+	    'ui.bootstrap',
+	    'pascalprecht.translate',
+	    'ngRoute',
+	    'i18nModule',
+	    'commonDirectivesModule',
+	    'mainModule',
+	    'restApiModule',
+	    'sportListModule'
 	];
 
 	appConfiguration = appConfigurations.productionConfiguration;
 
-	angular.module('helloworldApp', appModules, appConfiguration);
-	angular.bootstrap(document, ['helloworldApp']);
+	angular.module('OlimpiColombiaApp', appModules, appConfiguration);
+	angular.bootstrap(document, ['OlimpiColombiaApp']);
 
 
 /***/ },
@@ -103,12 +104,15 @@
 
 
 	/**
-	 * firstComponent Module
+	 * sportList Module
 	 **/
-	__webpack_require__(52);
-	__webpack_require__(53);
-	__webpack_require__(55);
+	 __webpack_require__(52);
+	 __webpack_require__(53);
+	 __webpack_require__(55);
+	 __webpack_require__(56);
 
+	__webpack_require__(58);
+	__webpack_require__(59);
 
 
 
@@ -62235,7 +62239,7 @@
 /* 49 */
 /***/ function(module, exports) {
 
-	module.exports = "<r-i18n class=\"pull-right\"></r-i18n>\r\n<br/>\r\n<first-component></first-component>\r\n";
+	module.exports = "<r-i18n class=\"pull-right\"></r-i18n>\r\n<br/>\r\n<sport-list title =\"SportList\"> </sport-list>\r\n";
 
 /***/ },
 /* 50 */
@@ -62281,50 +62285,85 @@
 /* 52 */
 /***/ function(module, exports) {
 
-	angular.module('firstComponentModule', []);
+	angular.module('sportListModule', []);
 
+	/* Include this part into your dependencies file
+	 require('../app/sportList/sportListModule.js');
+	 require('../app/sportList/sportListComponent.js');
+	 require('../app/sportList/sportList.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <sport-list title ="SportList"> </sport-list>
+	*/
 
 
 /***/ },
 /* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var firstComponentModule = angular.module('firstComponentModule');
-	firstComponentModule.controller('FirstComponentController', ['$i18n', function ($i18n) {
+	var  sportListModule = angular.module('sportListModule');
+	var SportListController = ['$i18n', 'SportListService', function ($i18n, SportListService) {
 	    /**
 	     * Tip: add here only visual logic
 	     */
-	    var vm = this;
-	    vm.showAlert = function () {
+	    var self = this;
+	    self.sportList = SportListService;
+	    self.sportList.getSports();
+	    self.showAlert = function () {
 	        alert($i18n.translate.general_alert);
 	    };
-	}]);
+	}];
 
-	firstComponentModule.directive('firstComponent', [function () {
-	    return {
-	        restrict: 'E',
-	        scope: {},
-	        controller: 'FirstComponentController',
-	        controllerAs: 'ctrl',
-	        template: __webpack_require__(54)
-	    };
-	}]);
+	sportListModule.component('sportList', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: SportListController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(54)
+	});
 
 
 /***/ },
 /* 54 */
 /***/ function(module, exports) {
 
-	module.exports = "<h>{{'general_first_component' | translate}}</h>\r\n<br/>\r\n<span>{{'general_copyright' | translate}},</span>\r\n<button ripple=\"#ffffff\" class=\"ripple\" ng-click=\"ctrl.showAlert()\">Click here</button>\r\n";
+	module.exports = "<a target=\"_blank\" href=\"https://docs.angularjs.org/guide/component\">\r\n    <h>{{'general_component' | translate }} : {{ctrl.title}}</h>\r\n    <br/>\r\n    <a ng-click=\"ctrl.showAlert()\">Click here</a>\r\n</a>\r\n";
 
 /***/ },
 /* 55 */
+/***/ function(module, exports) {
+
+	var sportListModule = angular.module('sportListModule');
+	sportListModule.factory('SportListService', ['SportsApiService',function (SportsApiService) {
+	        var Sports = function () {
+	            var _self = {}; //private
+	            _self.sports = [];
+
+	            this.getSports = function () {
+	                 var self = this;
+	                console.log('sucede');
+	                SportsApiService.get({}, function (response) {
+	                    console.log('esto sucede', response);
+	                });
+	            };
+
+	        };
+	        return new Sports();
+	    }]);
+
+
+/***/ },
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(56);
+	var content = __webpack_require__(57);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(34)(content, {});
@@ -62333,8 +62372,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./firstComponent.less", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./firstComponent.less");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./sportList.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./sportList.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -62344,7 +62383,7 @@
 	}
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(28)();
@@ -62352,9 +62391,34 @@
 
 
 	// module
-	exports.push([module.id, "first-component {\n  display: block;\n  background-color: #fdffff;\n  padding: 5px;\n  margin: 8px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\n}\nfirst-component h {\n  color: #3a4585;\n  font-size: 16px;\n}\nfirst-component span {\n  color: #002300;\n}\n", ""]);
+	exports.push([module.id, "sport-list {\n  display: block;\n  background-color: #fdffff;\n  padding: 5px;\n  margin: 8px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\n}\nsport-list h {\n  color: #3a4585;\n  font-size: 16px;\n}\nsport-list span {\n  color: #002300;\n}\n", ""]);
 
 	// exports
+
+
+/***/ },
+/* 58 */
+/***/ function(module, exports) {
+
+	var restApiModule = angular.module('restApiModule', ['ngResource', 'angular-loading-bar']);
+
+
+
+
+
+
+
+
+/***/ },
+/* 59 */
+/***/ function(module, exports) {
+
+	var restApiModule = angular.module('restApiModule');
+	restApiModule.factory('SportsApiService', ['$resource', function ($resource) {
+	    return $resource('api/sports/?format=json', {});
+	}]);
+
+
 
 
 /***/ }

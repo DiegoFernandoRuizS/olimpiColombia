@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "test": "karma start ./test/unit/karma.conf.js",
-    "webpack": "webpack --config webpack.config.js --colors --hide-modules --watch",
+    "webpack": "webpack --config webpack-dev.config.js --colors --hide-modules --watch",
+    "webpack:dev": "webpack --config webpack-dev.config.js --colors --hide-modules --watch",
+    "webpack:prod": "webpack --config webpack-prod.config.js --colors --hide-modules",
     "server:dev": "webpack-dev-server --config webpack-base.config.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base ../",
     "start": "npm run server:dev"
   },
