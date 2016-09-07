@@ -1,10 +1,11 @@
 from django.conf.urls import url, include
 from . import views
-from .views import (IndexView, AthletesBySportList, ScheduleList, UserCreate,
+from .views import (HomeView, IndexView, AthletesBySportList, ScheduleList, UserCreate,
                     SportListView, AthleteBySportListView)
 
 urlpatterns = [
     url('', include('social.apps.django_app.urls', namespace='social')),
+    url(r'^home/$', HomeView.as_view(), name='home'),
     url(r'^$', IndexView.as_view(), name='index'),
     url(
         r'^athletes_by_sport/(?P<sport_name>[^/]+)/$',

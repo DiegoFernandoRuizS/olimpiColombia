@@ -1,6 +1,4 @@
-.idea/
-workspace.xml
-*.pyc
-*.iml
-postgres_heroku
-.env
+**/WebContent/node_modules/*
+**/WebContent/app/dist/*
+**/.idea/*
+**/index.html

@@ -9,10 +9,14 @@ from django.views.generic import CreateView
 from rest_framework.permissions import IsAuthenticated
 
 from .models import Sport, Athlete, ScheduleItem, User
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from django.contrib.auth.forms import UserCreationForm
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from .serializers import SportSerializer, AthleteSerializer
+
+
+class HomeView(TemplateView):
+    template_name = 'home.html'
 
 
 class IndexView(ListView):
