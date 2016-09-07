@@ -120,7 +120,7 @@ def login_view(request):
             send_mail('Olimpicolombia, Rocket-team',
                       'This is a test from olimpi-colombia project,  Rocket-team',
                       EMAIL_HOST_USER,
-                      ['rtaimal@gmail.com', 'lf.mendivelso10@uniandes.edu.co'],
+                      ['rtaimal@gmail.com'],
                       fail_silently=True)
             mensaje = 'Nombre de usuario o clave no valida. Usuario: ' + str(username) + ", clave: " + str(password)
 
