@@ -11,7 +11,8 @@ var appModules = [
     'commonServicesModule',
     'mainModule',
     'restApiModule',
-    'sportListModule'
+    'sportListModule',
+    'athletesBySportModule'
 ];
 
 appConfiguration = appConfigurations.productionConfiguration;

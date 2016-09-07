@@ -51,3 +51,7 @@ require('../app/main/main.less');
 require('../app/restApi/restApiModule.js');
 require('../app/restApi/sportsApiService.js');
 
+ require('../app/athletesBySport/athletesBySportModule.js');
+ require('../app/athletesBySport/athletesBySportComponent.js');
+ require('../app/athletesBySport/athletesBySport.less');
+

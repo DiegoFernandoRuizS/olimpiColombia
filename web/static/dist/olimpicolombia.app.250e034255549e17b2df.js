@@ -57,7 +57,8 @@
 	    'commonServicesModule',
 	    'mainModule',
 	    'restApiModule',
-	    'sportListModule'
+	    'sportListModule',
+	    'athletesBySportModule'
 	];
 
 	appConfiguration = appConfigurations.productionConfiguration;
@@ -122,6 +123,10 @@
 
 	__webpack_require__(60);
 	__webpack_require__(61);
+
+	 __webpack_require__(62);
+	 __webpack_require__(63);
+	 __webpack_require__(65);
 
 
 
@@ -62368,17 +62373,17 @@
 	     * Tip: add here only visual logic
 	     */
 	    var self = this;
-	    self.sportList = SportListService;
-	    self.sportList.getSports();
+	    self.sportListService = SportListService;
+	    self.sportListService.getSports();
 	    self.showAlert = function () {
 	        alert($i18n.translate.general_alert);
 	    };
 	    self.showModalAthletesBySport = function (sport) {
 	        console.log(sport.name);
-	        self.sportList.sportSelected = sport;
+	        self.sportListService.getAthletesBySport(sport);
 	        $bzModal.showPopup({}, {
-	            template: '<span>Boxeo</span>',
-	            size: '300px'
+	            template: '<athletes-by-sport title ="AthletesBySport"> </athletes-by-sport>',
+	            size: '600px'
 	        });
 	    };
 	}];
@@ -62398,7 +62403,7 @@
 /* 56 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"sport-list\">\r\n    <div class=\"col-md-4 col-sm-6 col-lg-3 sport\"\r\n         ng-repeat=\"sport in ctrl.sportList.sports\"\r\n         ng-click=\"ctrl.showModalAthletesBySport(sport)\">\r\n        <div class=\"well\">\r\n            <h5 align=\"center\">\r\n                <span> {{ sport.name }}  </span>\r\n            </h5>\r\n            <span class=\"sprite-sports {{ sport.icon }}\"></span>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n";
+	module.exports = "<div class=\"sport-list\">\r\n    <div class=\"col-md-4 col-sm-6 col-lg-3 sport\"\r\n         ng-repeat=\"sport in ctrl.sportListService.sports\"\r\n         ng-click=\"ctrl.showModalAthletesBySport(sport)\">\r\n        <div class=\"well\">\r\n            <h5 align=\"center\">\r\n                <span> {{ sport.name }}  </span>\r\n            </h5>\r\n            <span class=\"sprite-sports {{ sport.icon }}\"></span>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n";
 
 /***/ },
 /* 57 */
@@ -62408,11 +62413,19 @@
 	sportListModule.factory('SportListService', ['SportsApiService', function (SportsApiService) {
 	    var Sports = function () {
 	        this.sports = [];
-	        this.sportSelected ={};
+	        this.athletesBySport = [];
 	        this.getSports = function () {
 	            var self = this;
 	            SportsApiService.loadSports({}, function (response) {
 	                self.sports = response;
+	            });
+	        };
+
+	        this.getAthletesBySport = function (sport) {
+	            var self = this;
+	            SportsApiService.loadAthletesBySport({sportName: sport.name}, function (response) {
+	                console.log(response);
+	                self.athletesBySport = response;
 	            });
 	        };
 	    };
@@ -62485,9 +62498,104 @@
 	            method: 'GET',
 	            isArray: true,
 	            params: {}
+	        },
+
+	        loadAthletesBySport: {
+	            url: 'https://olimpi-colombia.herokuapp.com/api/athletes_by_sport/:sportName/?format=json',
+	            method: 'GET',
+	            isArray: true,
+	            params: {sportName:''}
 	        }
 	    });
 	}]);
+
+
+/***/ },
+/* 62 */
+/***/ function(module, exports) {
+
+	angular.module('athletesBySportModule', []);
+
+	/* Include this part into your dependencies file
+	 require('../app/athletesBySport/athletesBySportModule.js');
+	 require('../app/athletesBySport/athletesBySportComponent.js');
+	 require('../app/athletesBySport/athletesBySport.less');
+	 */
+
+
+	/* Include this part into your app.html file
+	 <athletes-by-sport title ="AthletesBySport"> </athletes-by-sport>
+	*/
+
+
+/***/ },
+/* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var athletesBySportModule = angular.module('athletesBySportModule');
+	var AthletesBySportController = ['SportListService', '$bzModal', function (SportListService, $bzModal) {
+	    var self = this;
+	    self.sportListService = SportListService;
+	    self.closeModalAthletesBySport = function () {
+	        $bzModal.closePopup();
+	    };
+	}];
+
+	athletesBySportModule.component('athletesBySport', {
+	    transclude: true,
+	    bindings: {
+	        title: '@'
+	    },
+	    controller: AthletesBySportController,
+	    controllerAs: 'ctrl',
+	    template: __webpack_require__(64)
+	});
+
+
+/***/ },
+/* 64 */
+/***/ function(module, exports) {
+
+	module.exports = "<a ng-click=\"ctrl.closeModalAthletesBySport()\" class=\"close-button\">X</a>\r\n<h4>Athletas por deporte</h4>\r\n<div class=\"athlete row\"\r\n     ng-repeat=\"athlete in ctrl.sportListService.athletesBySport\">\r\n    <div class=\"col-sm-12\">\r\n        <div class=\"col-xs-12 col-sm-2\">\r\n                        <span class=\"col-sm-12\" style=\"padding-top: 20px;\">\r\n                            <img src=\"{{athlete.photo.url}}\" width=\"50\" height=\"50\"/>\r\n                        </span>\r\n        </div>\r\n        <div class=\"col-xs-12 col-sm-6\">\r\n            <h2>{{ athlete.first_name }} {{ athlete.last_name }}</h2>\r\n            <p><strong>Lugar de nacimiento: </strong>{{ athlete.birth_place }} </p>\r\n            <p><strong>Fecha de nacimiento: </strong>{{ athlete.birthdate }} </p>\r\n            <p><strong>Peso: </strong>{{ athlete.weight }} KG </p>\r\n            <p><strong>Altura: </strong>{{ athlete.height }} CMS</p>\r\n        </div>\r\n        <div class=\"col-xs-12 col-sm-3 text-center\">\r\n                      <span class=\"col-sm-12\" style=\"padding-top: 20px;\">\r\n                               <video controls width=\"150\" height=\"150\">\r\n                               <source ng-src=\"{{athlete.video.url}}\" type=\"video/mp4\">\r\n                               Tu navegador no implementa el elemento <code>video</code>.\r\n                               </video>\r\n                              <!-- <div class=\"empty-video\"></div>   -->\r\n                      </span>\r\n            <br><br><br><br>\r\n            <div class=\"fb-share-button\" data-href=\"{{ athlete.video.url }}\" data-layout=\"button\" data-size=\"small\"\r\n                 data-mobile-iframe=\"true\">\r\n                <a class=\"fb-xfbml-parse-ignore\" target=\"_blank\"\r\n                   href=\"https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse\">\r\n                    Compartir\r\n                </a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ },
+/* 65 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(66);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(34)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./athletesBySport.less", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./../../node_modules/less-loader/index.js!./athletesBySport.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 66 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(28)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "athletes-by-sport {\n  height: 600px;\n  display: block;\n}\nathletes-by-sport h4 {\n  padding-left: 7px;\n  font-weight: bolder;\n}\nathletes-by-sport .close-button {\n  float: right;\n  margin-right: 13px;\n  font-weight: bold;\n  cursor: pointer;\n}\nathletes-by-sport .athlete {\n  display: block;\n  background-color: #fdffff;\n  padding: 5px;\n  margin: 8px;\n  border-radius: 3px;\n  border: 1px solid #dadada;\n  box-shadow: 0 4px 6px -3px rgba(194, 194, 194, 0.15);\n}\n", ""]);
+
+	// exports
 
 
 /***/ }

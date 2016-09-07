@@ -4,17 +4,17 @@ var SportListController = ['$i18n', 'SportListService', '$bzModal', function ($i
      * Tip: add here only visual logic
      */
     var self = this;
-    self.sportList = SportListService;
-    self.sportList.getSports();
+    self.sportListService = SportListService;
+    self.sportListService.getSports();
     self.showAlert = function () {
         alert($i18n.translate.general_alert);
     };
     self.showModalAthletesBySport = function (sport) {
         console.log(sport.name);
-        self.sportList.sportSelected = sport;
+        self.sportListService.getAthletesBySport(sport);
         $bzModal.showPopup({}, {
-            template: '<span>Boxeo</span>',
-            size: '300px'
+            template: '<athletes-by-sport title ="AthletesBySport"> </athletes-by-sport>',
+            size: '600px'
         });
     };
 }];
