@@ -117,10 +117,10 @@ def login_view(request):
             login(request, user)
             return redirect(reverse('index'))
         else:
-            send_mail('Olimpicolombia',
-                      'This is a test for olimpi-colombia project',
+            send_mail('Olimpicolombia, Rocket-team',
+                      'This is a test from olimpi-colombia project,  Rocket-team',
                       EMAIL_HOST_USER,
-                      ['rtaimal@gmail.com'],
+                      ['rtaimal@gmail.com', 'lf.mendivelso10@uniandes.edu.co'],
                       fail_silently=True)
             mensaje = 'Nombre de usuario o clave no valida. Usuario: ' + str(username) + ", clave: " + str(password)
 
