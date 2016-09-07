@@ -13,6 +13,8 @@ from django.views.generic import ListView, TemplateView
 from django.contrib.auth.forms import UserCreationForm
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from .serializers import SportSerializer, AthleteSerializer
+from django.core.mail import send_mail
+from olimpiColombia.settings import EMAIL_HOST_USER
 
 
 class HomeView(TemplateView):
@@ -115,6 +117,11 @@ def login_view(request):
             login(request, user)
             return redirect(reverse('index'))
         else:
+            send_mail('Olimpicolombia test',
+                      'This a test for olimpi colombia project',
+                      EMAIL_HOST_USER,
+                      ['rtaimal@gmail.com'],
+                      fail_silently=True)
             mensaje = 'Nombre de usuario o clave no valida. Usuario: ' + str(username) + ", clave: " + str(password)
 
     return render(request, 'login.html', {'mensaje': mensaje})
