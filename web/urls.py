@@ -5,8 +5,8 @@ from .views import (HomeView, IndexView, AthletesBySportList, ScheduleList, User
 
 urlpatterns = [
     url('', include('social.apps.django_app.urls', namespace='social')),
-    url(r'^home/$', HomeView.as_view(), name='home'),
-    url(r'^$', IndexView.as_view(), name='index'),
+    url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^home/$', IndexView.as_view(), name='index'),
     url(
         r'^athletes_by_sport/(?P<sport_name>[^/]+)/$',
         AthletesBySportList.as_view(),
