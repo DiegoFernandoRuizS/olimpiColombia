@@ -3,6 +3,7 @@ sportListModule.factory('SportListService', ['SportsApiService', function (Sport
     var Sports = function () {
         this.sports = [];
         this.athletesBySport = [];
+        this.error = null;
         this.getSports = function () {
             var self = this;
             SportsApiService.loadSports({}, function (response) {
@@ -13,9 +14,16 @@ sportListModule.factory('SportListService', ['SportsApiService', function (Sport
         this.getAthletesBySport = function (sport) {
             var self = this;
             self.athletesBySport = [];
-            SportsApiService.loadAthletesBySport({sportName: sport.name}, function (response) {
-                self.athletesBySport = response;
-            });
+            self.error = null;
+            SportsApiService.loadAthletesBySport({sportName: sport.name},
+                function (response) {
+                    self.athletesBySport = response;
+                },
+                function (error) {
+                    if (error.status = 403) {
+                        self.error = error;
+                    }
+                });
         };
     };
     return new Sports();

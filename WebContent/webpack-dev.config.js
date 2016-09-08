@@ -8,14 +8,14 @@ module.exports = {
   output: {
     path: '../web/static/dist',
     filename: '[name].[chunkhash].js',
-    publicPath: '/web/static/dist/'
+    publicPath: 'http://localhost:3000/web/static/dist/'
   },
   module: {
     loaders: [
       {
         test: /[.]jade$/,
         loader: PathRewriterPlugin.rewriteAndEmit({
-          name: '../../../index.html',
+           name: '../../../web/templates/[name].html', //generate home.html on templates folder
           loader: 'jade-html?' + JSON.stringify({pretty: true})
         })
       },

@@ -115,7 +115,7 @@ def login_view(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect(reverse('index'))
+            return redirect(reverse('home'))
         else:
             send_mail('Olimpicolombia, Rocket-team',
                       'This is a test from olimpi-colombia project,  Rocket-team',
